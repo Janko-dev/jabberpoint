@@ -21,6 +21,7 @@ _Table 1 - List of entities_
 |            | &rarr; Image | Derived from content. An image displays a fetched figure through a reference to the source.                                                                                                                                                 |
 |            | &rarr; Table | Derived from content. A table consists of an ordered sequence of rows, that each contain an ordered sequence of content entities.                                                                                                           |
 | Style      |              | The style controls the appearance of the slide show and its slides by being attached to content entities.                                                                                                                                   |
+
 A visually depicted model of the entities in table 1 is shown in figure 1. It is noteworthy to mention that the model is not part of the design of the domain, but rather part of the analysis of the domain. It is a direct translation of the entities and their relationship in terms of cardinality and ownership. 
 
 _Figure 1 - Analysis of the domain_

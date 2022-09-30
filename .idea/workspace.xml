@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/DFC_domain_model.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/FontStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/FontStyle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/ImageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/ImageItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/SlideShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/SlideShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShowComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/SlideShowComposite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShowComposite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomainServices/DomainCore/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/TextItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
