@@ -1,4 +1,4 @@
-package DomainServices.DomainCore;
+package Domain.Core;
 
 import java.awt.*;
 import java.util.ArrayList;

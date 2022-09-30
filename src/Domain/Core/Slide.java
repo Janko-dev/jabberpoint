@@ -1,10 +1,8 @@
-package DomainServices.DomainCore;
+package Domain.Core;
 
 import java.util.Iterator;
 
-public class SlideShow extends SlideShowComposite{
-
-
+public class Slide extends SlideShowComposite{
     @Override
     public Iterator iterator() {
         return null;
