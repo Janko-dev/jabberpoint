@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE slideshow SYSTEM "jabberpoint.dtd">
+<slideshow>
+    <title>My first slide show</title>
+    <author>John Doe</author>
+    <date>02-10-2022</date>
+    <slide>
+        <text> test1 </text>
+        <text> test2 </text>
+        <text> test3 </text>
+    </slide>
+    <slide>
+        <list>
+            <text> hello world </text>
+            <image src="./test_img.png"/>
+            <list>
+                <text> list_item1 </text>
+                <text> list_item2 </text>
+            </list>
+        </list>
+    </slide>
+    <slide>
+        <table rows="2" cols="2">
+            <list>
+                <text> row1col1 </text>
+                <text> row1col2 </text>
+            </list>
+            <list>
+                <text> row2col1 </text>
+                <text> row2col2 </text>
+            </list>
+        </table>
+    </slide>
+</slideshow>

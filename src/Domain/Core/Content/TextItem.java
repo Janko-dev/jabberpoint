@@ -8,6 +8,9 @@ public class TextItem extends SlideItem {
 
     public String text;
 
+    public TextItem(String text) {
+        this.text = text;
+    }
     @Override
     public Iterator iterator() {
         return null;

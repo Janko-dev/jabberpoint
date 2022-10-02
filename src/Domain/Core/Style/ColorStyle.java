@@ -1,2 +1,7 @@
-package Domain.Core.Style;public class ColorStyle {
+package Domain.Core.Style;
+
+import java.awt.*;
+
+public class ColorStyle implements Style{
+    public Color col;
 }
