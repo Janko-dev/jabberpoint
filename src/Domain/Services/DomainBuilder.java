@@ -1,13 +1,13 @@
 package Domain.Services;
 
-public interface DomainBuilder<T, U> {
+public interface DomainBuilder<T> {
 
     public void reset();
-    public void setTitle(String title);
-    public void setAuthor(String author);
-    public void setDate(String date);
-
-    public void appendSlide(U slide);
+    public void setConverter(Deserializable converter);
+    public void setTitle();
+    public void setAuthor();
+    public void setDate();
+    public void appendSlides();
 
     public T getResult();
 

@@ -1,5 +1,7 @@
 package Infrastructure;
 
+import Domain.Services.DOMDeserializer;
+import Domain.Services.Deserializable;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -9,15 +11,15 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-public class XMLReader extends Reader<Document> {
+public class XMLReader extends Reader {
 
     @Override
-    public Document readFile(String filePath) {
+    public Deserializable readFile(String filePath) {
         try {
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc =  builder.parse(new File(filePath));
             doc.getDocumentElement().normalize();
-            return doc;
+            return new DOMDeserializer(doc);
         } catch (ParserConfigurationException | IOException | SAXException e) {
             throw new RuntimeException(e);
         }

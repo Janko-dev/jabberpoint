@@ -5,25 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
-      <change afterPath="$PROJECT_DIR$/resources/Notes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/jabberpoint.dtd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/slideshow_test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controls/DomainDirector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controls/SlideShowDirector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Core/Content/Table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Core/Style/ColorStyle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Services/DomainBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Services/SlideShowBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Reader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Writer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/Observable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controls/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Services/DOMDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Services/Deserializable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/Projector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/TextItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Notes" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Notes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/DomainDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/DomainDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/SlideShowDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/SlideShowDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/DomainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/DomainBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/SlideShowBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/SlideShowBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -56,15 +53,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/janba/IdeaProjects/Jabberpoint",
-    "settings.editor.selected.configurable": "settings.json.schema"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/janba/IdeaProjects/Jabberpoint&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.json.schema&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint\resources" />
@@ -133,11 +130,17 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Domain.Core.SlideShow" memberName="author" />
+        <PinnedItemInfo parentTag="Domain.Core.SlideShow" memberName="date" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

@@ -1,14 +1,16 @@
 package Controls;
 
 import Domain.Services.DomainBuilder;
+import Infrastructure.Reader;
 
-public abstract class DomainDirector<T, U> {
+public abstract class DomainDirector<T> {
 
-    protected DomainBuilder<T, U> builder;
+    protected DomainBuilder<T> builder;
+    protected Reader reader;
 
-    public void changeBuilder(DomainBuilder<T, U> builder){
+    public void changeBuilder(DomainBuilder<T> builder){
         this.builder = builder;
     }
 
-    public abstract T make();
+    public abstract T make(String filePath);
 }

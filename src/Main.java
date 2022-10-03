@@ -2,14 +2,18 @@ import Controls.DomainDirector;
 import Controls.SlideShowDirector;
 import Domain.Core.SlideShow;
 import Domain.Services.SlideShowBuilder;
-import org.w3c.dom.Node;
+import Domain.Services.DOMDeserializer;
+import Infrastructure.Reader;
+import Infrastructure.XMLReader;
 
 public class Main {
     public static void main(String[] args) {
         // main is controller/director for now
 
-        DomainDirector<SlideShow, Node> director = new SlideShowDirector(new SlideShowBuilder());
-        SlideShow result = director.make();
+        SlideShowBuilder builder = new SlideShowBuilder();
+        Reader xmlReader = new XMLReader();
+        DomainDirector<SlideShow> director = new SlideShowDirector(builder, xmlReader);
+        SlideShow result = director.make("resources/slideshow_test.xml");
 
         System.out.println(result);
     }

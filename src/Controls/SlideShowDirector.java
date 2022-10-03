@@ -1,39 +1,28 @@
 package Controls;
 
 import Domain.Core.SlideShow;
+import Domain.Services.Deserializable;
 import Domain.Services.DomainBuilder;
-import Domain.Services.SlideShowBuilder;
 import Infrastructure.Reader;
-import Infrastructure.XMLReader;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
-public class SlideShowDirector extends DomainDirector<SlideShow, Node>{
+public class SlideShowDirector extends DomainDirector<SlideShow>{
 
-    public SlideShowDirector(DomainBuilder<SlideShow, Node> builder){
+    public SlideShowDirector(DomainBuilder<SlideShow> builder, Reader reader){
+        this.reader = reader;
         this.changeBuilder(builder);
     }
 
     @Override
-    public SlideShow make() {
-        Reader<Document> reader = new XMLReader();
-        Document doc = reader.readFile("resources/slideshow_test.xml");
+    public SlideShow make(String filePath) {
+        Deserializable converter = reader.readFile(filePath);
 
         builder.reset();
+        builder.setConverter(converter);
 
-        builder.setTitle(doc.getElementsByTagName("title").item(0).getTextContent());
-        builder.setAuthor(doc.getElementsByTagName("author").item(0).getTextContent());
-        builder.setDate(doc.getElementsByTagName("date").item(0).getTextContent());
-
-        NodeList slides = doc.getElementsByTagName("slide");
-        for (int i = 0, len = slides.getLength(); i < len; i++){
-
-            Node slideNode = slides.item(i);
-            if (slideNode.getNodeType() == Node.ELEMENT_NODE){
-                builder.appendSlide(slideNode);
-            }
-        }
+        builder.setTitle();
+        builder.setAuthor();
+        builder.setDate();
+        builder.appendSlides();
         return builder.getResult();
     }
 }
