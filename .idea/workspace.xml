@@ -5,22 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
-      <change afterPath="$PROJECT_DIR$/src/Communication/Observable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Communication/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controls/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Services/DOMDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Services/Deserializable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Projector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/NextCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/PreviousCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Notes" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Notes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/DomainDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/DomainDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/SlideShowDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/SlideShowDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/DomainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/DomainBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/SlideShowBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/SlideShowBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Observable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/Direction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Deserializable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Deserializable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Infrastructure/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Projector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Projector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -132,7 +128,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>17</line>
+          <line>15</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

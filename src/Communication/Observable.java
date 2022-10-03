@@ -1,8 +1,8 @@
 package Communication;
 
-public interface Observable<T> {
+public interface Observable {
 
-    public void add(Observer<T> observer);
-    public void remove(Observer<T> observer);
-    public void notifyObservers(T notification);
+    public void add(Observer observer);
+    public void remove(Observer observer);
+    public void notifyObservers(Command command);
 }

@@ -1,6 +1,6 @@
 package Communication;
 
-public interface Observer<T> {
+public interface Observer {
 
-    public void update(T state);
+    public void update(Command command);
 }

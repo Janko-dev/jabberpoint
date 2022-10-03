@@ -1,9 +1,6 @@
 package Domain.Services;
 
-import Domain.Core.Content.List;
-import Domain.Core.Content.Table;
 import Domain.Core.Slide;
-import Domain.Core.SlideShowComponent;
 
 public interface Deserializable {
     public Slide convertToSlide(int nodeIndex);
