@@ -2,6 +2,7 @@ package Controls;
 
 import Communication.*;
 import UI.Projector;
+import UI.SlideShowProjector;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -10,23 +11,27 @@ import java.util.ArrayList;
 public class KeyBoardController extends KeyAdapter implements Observable {
 
     private ArrayList<Observer> observers;
-    private Projector projector;
+    private SlideShowProjector projector;
 
-    public KeyBoardController(Projector projector){
+    public KeyBoardController(SlideShowProjector projector){
         observers = new ArrayList<>();
         this.projector = projector;
     }
 
+    @Override
     public void keyPressed(KeyEvent keyEvent){
         switch (keyEvent.getKeyCode()) {
             case KeyEvent.VK_PAGE_DOWN:
             case KeyEvent.VK_DOWN:
             case KeyEvent.VK_ENTER:
+            case KeyEvent.VK_SPACE:
+            case KeyEvent.VK_RIGHT:
             case '+':
                 notifyObservers(new NextCommand(projector));
                 break;
             case KeyEvent.VK_PAGE_UP:
             case KeyEvent.VK_UP:
+            case KeyEvent.VK_LEFT:
             case '-':
                 notifyObservers(new PreviousCommand(projector));
                 break;
@@ -42,12 +47,12 @@ public class KeyBoardController extends KeyAdapter implements Observable {
 
 
     @Override
-    public void add(Observer observer) {
+    public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
     @Override
-    public void remove(Observer observer) {
+    public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 

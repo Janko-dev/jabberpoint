@@ -6,7 +6,7 @@ import Domain.Core.SlideShow;
 public class SlideShowBuilder implements DomainBuilder<SlideShow>{
 
     private SlideShow slideShow;
-    private Deserializable converter;
+    private Deserializer converter;
 
     public SlideShowBuilder(){
         reset();
@@ -18,7 +18,7 @@ public class SlideShowBuilder implements DomainBuilder<SlideShow>{
     }
 
     @Override
-    public void setConverter(Deserializable converter) {
+    public void setConverter(Deserializer converter) {
         this.converter = converter;
     }
 

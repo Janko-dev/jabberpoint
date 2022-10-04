@@ -1,7 +1,6 @@
 package Domain.Core;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class SlideShow extends SlideShowComposite{
 
@@ -14,7 +13,12 @@ public class SlideShow extends SlideShowComposite{
     }
 
     @Override
-    public Iterator iterator() {
-        return null;
+    public Iterator<Slide> createIterator() {
+        return new SlideShowIterator(components);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        // Slide show does not accept visitor
     }
 }

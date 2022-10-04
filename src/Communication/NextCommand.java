@@ -1,12 +1,13 @@
 package Communication;
 
 import UI.Projector;
+import UI.SlideShowProjector;
 
 public class NextCommand implements Command{
 
-    public Projector receiver;
+    public SlideShowProjector receiver;
 
-    public NextCommand(Projector receiver){
+    public NextCommand(SlideShowProjector receiver){
         this.receiver = receiver;
     }
 

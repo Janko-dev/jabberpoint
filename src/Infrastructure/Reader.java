@@ -1,9 +1,9 @@
 package Infrastructure;
 
-import Domain.Services.Deserializable;
+import Domain.Services.Deserializer;
 
 public abstract class Reader {
 
-    public abstract Deserializable readFile(String filePath);
+    public abstract Deserializer readFile(String filePath);
 
 }

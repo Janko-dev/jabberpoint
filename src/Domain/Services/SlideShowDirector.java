@@ -1,8 +1,6 @@
-package Controls;
+package Domain.Services;
 
 import Domain.Core.SlideShow;
-import Domain.Services.Deserializable;
-import Domain.Services.DomainBuilder;
 import Infrastructure.Reader;
 
 public class SlideShowDirector extends DomainDirector<SlideShow>{
@@ -14,7 +12,7 @@ public class SlideShowDirector extends DomainDirector<SlideShow>{
 
     @Override
     public SlideShow make(String filePath) {
-        Deserializable converter = reader.readFile(filePath);
+        Deserializer converter = reader.readFile(filePath);
 
         builder.reset();
         builder.setConverter(converter);

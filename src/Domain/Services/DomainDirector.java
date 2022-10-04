@@ -1,4 +1,4 @@
-package Controls;
+package Domain.Services;
 
 import Domain.Services.DomainBuilder;
 import Infrastructure.Reader;

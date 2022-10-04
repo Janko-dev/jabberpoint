@@ -1,7 +1,7 @@
 package Infrastructure;
 
 import Domain.Services.DOMDeserializer;
-import Domain.Services.Deserializable;
+import Domain.Services.Deserializer;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 public class XMLReader extends Reader {
 
     @Override
-    public Deserializable readFile(String filePath) {
+    public Deserializer readFile(String filePath) {
         try {
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc =  builder.parse(new File(filePath));

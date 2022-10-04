@@ -2,7 +2,7 @@ package Domain.Services;
 
 import Domain.Core.Slide;
 
-public interface Deserializable {
+public interface Deserializer {
     public Slide convertToSlide(int nodeIndex);
     public String parseTitle();
     public String parseAuthor();

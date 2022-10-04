@@ -73,7 +73,7 @@ _Table 5 - Details of the **change slide action**._
 The details of the actions can optionally depict associated rules that, in the case of action rules, determine when an action may take place, and strategies, that determine how an action should be performed. 
 
 #### State projector rule
-This rule is a *constraint* rule for the **start slide show action**. It specifies that there should be a valid projector that can use the slide show to interface the content of the slides to both the presentor and the viewers.
+This rule is a *constraint* rule for the **start slide show action**. It specifies that there should be a valid projector that can use the slide show to interface the content of the slides to both the presenter and the viewers.
 
 #### Slide show navigation rule
 this rule is a *strategy* rule for the **change slide action**. It specifies that the navigation through the slide show should be from the first slide to the last slide in a linear way. To be able to navigate to a next or previous slide, there should be a valid slide available that corresponds to the requested action.
@@ -81,9 +81,12 @@ this rule is a *strategy* rule for the **change slide action**. It specifies tha
 ### Considerations
 There were a couple of deliberations during the composition of the ubiquitous language, that would be beneficial to discuss. 
 
-In the domain of presentation tools, slides used to be projected using a projector. As an entity, a projector did not fit in the ubiquitous language, because it doesn't hold much domain specific value other than displaying the slides to a screen. The projector would act as the user-interface of the program, and should therefore be contained in its own layer in the architecture. 
+In the domain of presentation tools, slides used to be projected using a projector. As an entity, a projector does not fit in the ubiquitous language, because it does not hold much domain specific value other than displaying the slides to a screen. The projector would act as the user-interface of the program, and should therefore be contained in its own layer in the architecture. 
 
-Another entity that was considered, but ultimately removed from the ubiquitous language, is the presenter. The presenter acts as the catalyst to perform navigation actions. However, the presenter is simply the controller of the slideshow, and does not provide domain specific functionality. Therefore, we opted to separate the presenter from the core domain by placing the presenter in a controls layer. 
+Another entity that was considered, but ultimately removed from the ubiquitous language, is the presenter. The presenter acts as the catalyst to perform navigation actions. However, the presenter is simply the controller of the slideshow, and does not provide domain specific functionality. Therefore, we opted to separate the presenter from the core domain by having the controls layer of the architecture behaving like the presenter. 
 
 ## Design of the domain
 
+## Design notes:
+- For the UI, we use a combination of the Command pattern and the Observer pattern. this seems to be overkill. However, in the face of extendibility, one could imagine the observable (i.e., the keyboard controller) to notify not only a slideshow projector, but also many other devices to allow streaming/screen-sharing functionality. In the same vein, commands are initialised in the keyboard controller, with a passed reference to the current projector, then updated by the same projector during an observer notification, and then executed, which delegates command execution back and forth. This also seems like overkill, however, it serves the purpose of extending commands with functionality that is not only linked to the projector, but for instance to the styling of the slide show components (making every character larger for example).
+- 

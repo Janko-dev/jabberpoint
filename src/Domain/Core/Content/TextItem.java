@@ -1,8 +1,8 @@
 package Domain.Core.Content;
 
+import Domain.Core.Iterator;
 import Domain.Core.SlideItem;
-
-import java.util.Iterator;
+import Domain.Core.Visitor;
 
 public class TextItem extends SlideItem {
 
@@ -12,7 +12,12 @@ public class TextItem extends SlideItem {
         this.text = text;
     }
     @Override
-    public Iterator iterator() {
+    public Iterator<SlideItem> createIterator() {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitTextItem(this);
     }
 }

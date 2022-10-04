@@ -3,7 +3,7 @@ package Domain.Services;
 public interface DomainBuilder<T> {
 
     public void reset();
-    public void setConverter(Deserializable converter);
+    public void setConverter(Deserializer converter);
     public void setTitle();
     public void setAuthor();
     public void setDate();
