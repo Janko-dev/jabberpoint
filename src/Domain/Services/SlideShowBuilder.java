@@ -38,7 +38,7 @@ public class SlideShowBuilder implements DomainBuilder<SlideShow>{
     }
 
     @Override
-    public void appendSlides() {
+    public void appendContent() {
         for (int index = 0, len = converter.getSlidesLength(); index < len; index++){
             Slide newSlide = converter.convertToSlide(index);
             if (newSlide == null) return;

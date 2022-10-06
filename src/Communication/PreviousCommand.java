@@ -15,8 +15,4 @@ public class PreviousCommand implements Command{
         this.receiver.drawPreviousSlide();
     }
 
-    @Override
-    public void unexecute() {
-        this.receiver.drawNextSlide();
-    }
 }

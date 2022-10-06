@@ -1,7 +1,6 @@
 package Domain.Services;
 
 import Domain.Core.Slide;
-import Domain.Core.SlideShow;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
 

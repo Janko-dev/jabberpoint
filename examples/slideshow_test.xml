@@ -32,11 +32,12 @@
                 <text> list_item1 </text>
                 <text> list_item2 </text>
             </list>
+            <text> na de sublist </text>
         </list>
     </slide>
     <slide>
         <text>This is a table</text>
-        <table rows="2" cols="2">
+        <table rows="3" cols="2">
             <row>
                 <text> row1col1 </text>
                 <text> row1col2 </text>
@@ -45,6 +46,11 @@
                 <text> row2col1 </text>
                 <text> row2col2 </text>
             </row>
+            <row>
+                <text> 1 </text>
+                <text> b </text>
+            </row>
         </table>
+        <text>na de tabel</text>
     </slide>
 </slideshow>

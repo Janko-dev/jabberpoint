@@ -31,7 +31,7 @@ public class SlideIterator implements Iterator<SlideShowComponent>{
 
     @Override
     public boolean isDone() {
-        return index >= items.size()-1;
+        return index >= items.size();
     }
 
     @Override
