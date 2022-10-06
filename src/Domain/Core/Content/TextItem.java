@@ -1,8 +1,8 @@
 package Domain.Core.Content;
 
-import Domain.Core.Iterator;
+import Domain.Core.Iterator.Iterator;
 import Domain.Core.SlideItem;
-import Domain.Core.Visitor;
+import Domain.Services.Visitor;
 
 public class TextItem extends SlideItem {
 

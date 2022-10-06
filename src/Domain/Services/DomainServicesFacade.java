@@ -1,10 +1,12 @@
 package Domain.Services;
 
-import Domain.Core.Iterator;
+import Domain.Core.Iterator.Iterator;
 import Domain.Core.Slide;
 import Domain.Core.SlideShow;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
+
+import java.io.IOException;
 
 public class DomainServicesFacade implements DomainServices{
 
@@ -21,7 +23,11 @@ public class DomainServicesFacade implements DomainServices{
 
     @Override
     public void saveSlideShowTo(Writer writer, String filePath) {
-
+        try {
+            writer.writeToFile(filePath, slideShow);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     @Override

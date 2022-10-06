@@ -1,9 +1,11 @@
-package Domain.Core;
+package Domain.Services;
 
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
+import Domain.Core.Slide;
+import Domain.Core.SlideShow;
 
 public interface Visitor {
 

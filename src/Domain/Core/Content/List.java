@@ -1,9 +1,10 @@
 package Domain.Core.Content;
 
-import Domain.Core.Iterator;
+import Domain.Core.Iterator.Iterator;
+import Domain.Core.Iterator.SlideIterator;
 import Domain.Core.SlideShowComponent;
 import Domain.Core.SlideShowComposite;
-import Domain.Core.Visitor;
+import Domain.Services.Visitor;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ public class List extends SlideShowComposite {
 
     @Override
     public Iterator<SlideShowComponent> createIterator() {
-        return null;
+        return new SlideIterator(this.components);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package Domain.Core;
 
+import Domain.Core.Iterator.Iterable;
 import Domain.Core.Style.Style;
+import Domain.Services.Visitor;
 
 import java.util.ArrayList;
 

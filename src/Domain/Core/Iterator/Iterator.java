@@ -1,4 +1,4 @@
-package Domain.Core;
+package Domain.Core.Iterator;
 
 public interface Iterator<T> {
 

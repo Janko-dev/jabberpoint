@@ -1,5 +1,9 @@
 package Domain.Core;
 
+import Domain.Core.Iterator.Iterator;
+import Domain.Core.Iterator.SlideShowIterator;
+import Domain.Services.Visitor;
+
 import java.util.ArrayList;
 
 public class SlideShow extends SlideShowComposite{

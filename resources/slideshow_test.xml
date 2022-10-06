@@ -9,7 +9,8 @@
         <!ELEMENT image EMPTY>
         <!ATTLIST image src CDATA #REQUIRED>
         <!ELEMENT list (text|image|list|table)*>
-        <!ELEMENT table (list)*>
+        <!ELEMENT table (row)*>
+        <!ELEMENT row (text|image|list|table)*>
         <!ATTLIST table rows CDATA #REQUIRED>
         <!ATTLIST table cols CDATA #REQUIRED>
         ]>
@@ -23,6 +24,7 @@
         <text> test3 </text>
     </slide>
     <slide>
+        <text>this is a list</text>
         <list>
             <text> hello world </text>
             <image src="./test_img.png"/>
@@ -33,15 +35,16 @@
         </list>
     </slide>
     <slide>
+        <text>This is a table</text>
         <table rows="2" cols="2">
-            <list>
+            <row>
                 <text> row1col1 </text>
                 <text> row1col2 </text>
-            </list>
-            <list>
+            </row>
+            <row>
                 <text> row2col1 </text>
                 <text> row2col2 </text>
-            </list>
+            </row>
         </table>
     </slide>
 </slideshow>

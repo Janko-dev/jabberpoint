@@ -1,4 +1,7 @@
-package Domain.Core;
+package Domain.Core.Iterator;
+
+import Domain.Core.Slide;
+import Domain.Core.SlideShowComponent;
 
 import java.util.ArrayList;
 

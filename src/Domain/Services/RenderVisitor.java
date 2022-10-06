@@ -5,7 +5,6 @@ import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
 import Domain.Core.Slide;
-import Domain.Core.Visitor;
 
 import java.awt.*;
 
@@ -61,7 +60,17 @@ public class RenderVisitor implements Visitor {
             for (int j = 0; j < table.cols; j++){
                 int index = (i * table.rows) + j;
                 posX += j * ((boundingBox.width/table.cols) - 20);
+
+                int tempHeight = posY;
                 table.components.get(index).accept(this);
+
+                graphics.setColor(Color.BLACK);
+                graphics.drawRect(
+                        posX + boundingBox.x,
+                        posY - graphics.getFontMetrics().getHeight() - 10,
+                        (boundingBox.width/table.cols) - 20,
+                        posY - tempHeight);
+
                 posX -= j * ((boundingBox.width/table.cols) - 20);
                 posY -= graphics.getFontMetrics().getHeight() + 10;
             }
