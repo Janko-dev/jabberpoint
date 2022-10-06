@@ -32,7 +32,7 @@ public class SlideShowIterator implements Iterator<Slide>{
 
     @Override
     public boolean isDone() {
-        return index >= slides.size()-1;
+        return index >= slides.size();
     }
 
     @Override

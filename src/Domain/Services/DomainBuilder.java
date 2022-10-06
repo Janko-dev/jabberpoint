@@ -7,8 +7,7 @@ public interface DomainBuilder<T> {
     public void setTitle();
     public void setAuthor();
     public void setDate();
-    public void appendSlides();
-
+    public void appendContent();
     public T getResult();
 
 }

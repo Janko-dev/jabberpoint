@@ -6,12 +6,13 @@ import Domain.Core.SlideShow;
 import Domain.Services.XMLSerializer;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class XMLWriter extends Writer{
 
-    private static final String DTD =
+    private static final String META_DTD =
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
             "<!DOCTYPE slideshow[\n" +
             "        <!ELEMENT slideshow (title, author, date, slide+)>\n" +
@@ -23,7 +24,8 @@ public class XMLWriter extends Writer{
             "        <!ELEMENT image EMPTY>\n" +
             "        <!ATTLIST image src CDATA #REQUIRED>\n" +
             "        <!ELEMENT list (text|image|list|table)*>\n" +
-            "        <!ELEMENT table (list)*>\n" +
+            "        <!ELEMENT table (row)*>\n" +
+            "        <!ELEMENT row (text|image|list|table)*>\n" +
             "        <!ATTLIST table rows CDATA #REQUIRED>\n" +
             "        <!ATTLIST table cols CDATA #REQUIRED>\n" +
             "        ]>\n";
@@ -34,17 +36,29 @@ public class XMLWriter extends Writer{
         xmlSerializer = new XMLSerializer();
     }
 
+    @Override
+    public void writeToFile(String filePath, SlideShow slideShow) {
+        writeToFile(new File(filePath), slideShow);
+    }
 
     @Override
-    public void writeToFile(String filePath, SlideShow slideShow) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
-        xmlSerializer.setBufferedWriter(writer);
-        writer.write(DTD);
-        writer.write("<slideshow>");
-        for (Iterator<Slide> iter = slideShow.createIterator(); !iter.isDone(); iter.next()) {
-            xmlSerializer.visitSlide(iter.current());
+    public void writeToFile(File file, SlideShow slideShow) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            xmlSerializer.setBufferedWriter(writer);
+            writer.write(META_DTD);
+            writer.write("<slideshow>\n");
+            writer.write("\t<title>" + slideShow.title + "</title>\n");
+            writer.write("\t<author>" + slideShow.author + "</author>\n");
+            writer.write("\t<date>" + slideShow.date + "</date>\n");
+            for (Iterator<Slide> iter = slideShow.createIterator(); !iter.isDone(); iter.next()) {
+                xmlSerializer.visitSlide(iter.current());
+            }
+            writer.write("</slideshow>");
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        writer.write("</slideshow>");
     }
 
 }

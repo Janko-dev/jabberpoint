@@ -15,9 +15,14 @@ public class XMLReader extends Reader {
 
     @Override
     public Deserializer readFile(String filePath) {
+        return readFile(new File(filePath));
+    }
+
+    @Override
+    public Deserializer readFile(File file) {
         try {
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document doc =  builder.parse(new File(filePath));
+            Document doc =  builder.parse(file);
             doc.getDocumentElement().normalize();
             return new DOMDeserializer(doc);
         } catch (ParserConfigurationException | IOException | SAXException e) {

@@ -20,7 +20,7 @@ public class SlideShowDirector extends DomainDirector<SlideShow>{
         builder.setTitle();
         builder.setAuthor();
         builder.setDate();
-        builder.appendSlides();
+        builder.appendContent();
         return builder.getResult();
     }
 }

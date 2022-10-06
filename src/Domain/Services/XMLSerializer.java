@@ -20,6 +20,11 @@ public class XMLSerializer implements Visitor {
         this.writer = writer;
     }
 
+    private void writeIndentation() throws IOException {
+        for (int i = 0; i < indent; i++)
+            writer.write("\t");
+    }
+
     @Override
     public void visitSlide(Slide slide) {
         try {
@@ -38,8 +43,7 @@ public class XMLSerializer implements Visitor {
     @Override
     public void visitTextItem(TextItem textItem) {
         try {
-            for (int i = 0; i < indent; i++)
-                writer.write("\t");
+            writeIndentation();
             writer.write("<text>" + textItem.text + "</text>\n");
 
         } catch (IOException e) {
@@ -50,8 +54,7 @@ public class XMLSerializer implements Visitor {
     @Override
     public void visitImageItem(ImageItem imageItem) {
         try {
-            for (int i = 0; i < indent; i++)
-                writer.write("\t");
+            writeIndentation();
             writer.write("<image src=\"" + imageItem.src + "\"/>\n");
 
         } catch (IOException e) {
@@ -62,16 +65,14 @@ public class XMLSerializer implements Visitor {
     @Override
     public void visitListItem(List list) {
         try {
-            for (int i = 0; i < indent; i++)
-                writer.write("\t");
+            writeIndentation();
             writer.write("<list>\n");
             indent++;
             for (Iterator<SlideShowComponent> iter = list.createIterator(); !iter.isDone(); iter.next()) {
                 iter.current().accept(this);
             }
             indent--;
-            for (int i = 0; i < indent; i++)
-                writer.write("\t");
+            writeIndentation();
             writer.write("</list>\n");
         } catch (IOException e) {
             e.printStackTrace();
@@ -81,20 +82,24 @@ public class XMLSerializer implements Visitor {
     @Override
     public void visitTableItem(Table table) {
         try {
-            for (int i = 0; i < indent; i++)
-                writer.write("\t");
+            writeIndentation();
             writer.write("<table rows=\"" + table.rows + "\" cols=\"" + table.cols + "\">\n");
             indent++;
             for (Iterator<SlideShowComponent> iter = table.createIterator(); !iter.isDone(); iter.next()) {
-                if (iter.getIndex() % table.rows == 0){
+                if (iter.getIndex() % table.cols == 0){
+                    writeIndentation();
+                    writer.write("<row>\n");
                     indent++;
-                    iter.current().accept(this);
-                    // add <row> syntax
+                }
+                iter.current().accept(this);
+                if (iter.getIndex() % table.cols == table.cols-1){
+                    indent--;
+                    writeIndentation();
+                    writer.write("</row>\n");
                 }
             }
             indent--;
-            for (int i = 0; i < indent; i++)
-                writer.write("\t");
+            writeIndentation();
             writer.write("</table>\n");
         } catch (IOException e) {
             e.printStackTrace();

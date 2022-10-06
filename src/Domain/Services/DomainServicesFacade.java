@@ -23,16 +23,12 @@ public class DomainServicesFacade implements DomainServices{
 
     @Override
     public void saveSlideShowTo(Writer writer, String filePath) {
-        try {
-            writer.writeToFile(filePath, slideShow);
-        } catch (IOException e){
-            e.printStackTrace();
-        }
+        writer.writeToFile(filePath, slideShow);
     }
 
     @Override
     public void nextSlide() {
-        if (!slideShowIterator.isDone())
+        if (slideShowIterator.getIndex() + 1 < slideShow.getLength())
             slideShowIterator.next();
     }
 

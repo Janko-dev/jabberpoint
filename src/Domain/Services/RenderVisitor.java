@@ -53,12 +53,19 @@ public class RenderVisitor implements Visitor {
 
     @Override
     public void visitTableItem(Table table) {
-        int savedPosX = posX;
-        int savedPosY = posY;
+//        int savedPosX = posX;
+//        int savedPosY = posY;
+        // 0,0  0,1
+        // 1,0  1,1
+        // 2,0  2,1
+
+        // 0,0 = 0*3 + 0 = 0
+        // 0,1 = 0*3 + 1 = 1
+        // 1,0 = 1*3 + 0 = 3
 
         for (int i = 0; i < table.rows; i++){
             for (int j = 0; j < table.cols; j++){
-                int index = (i * table.rows) + j;
+                int index = (i * table.cols) + j;
                 posX += j * ((boundingBox.width/table.cols) - 20);
 
                 int tempHeight = posY;
@@ -76,7 +83,7 @@ public class RenderVisitor implements Visitor {
             }
             posY += graphics.getFontMetrics().getHeight() + 10;
         }
-        posX = savedPosX;
-        posY = savedPosY;
+//        posX = savedPosX;
+//        posY = savedPosY;
     }
 }

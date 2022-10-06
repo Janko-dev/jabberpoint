@@ -1,4 +1,3 @@
-import UI.Projector;
 import UI.SlideShowProjector;
 
 public class Main {
