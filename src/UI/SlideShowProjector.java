@@ -22,36 +22,27 @@ public class SlideShowProjector extends Projector{
 
     public SlideShowProjector(String title, int screenWidth, int screenHeight){
         super(title, screenWidth, screenHeight);
-
-        KeyBoardController keyInput = new KeyBoardController(this);
-        keyInput.addObserver(this);
-        this.addKeyListener(keyInput);
-
-        defaultFont = new Font("Helvetica", Font.PLAIN, 20);
+        defaultFont = new Font("Arial", Font.PLAIN, 20);
 
         services = new DomainServicesFacade();
         services.createSlideShowFrom(new XMLReader(), "examples/slideshow_test.xml");
 
         initializeScreen();
-        MenuController menuController = new MenuController(services, frame);
+
+        KeyBoardController keyInput = new KeyBoardController(services);
+        keyInput.addObserver(this);
+        keyInput.addObserver(services);
+        this.addKeyListener(keyInput);
+
+        MenuController menuController = new MenuController(services);
         menuController.addObserver(this);
+        menuController.addObserver(services);
         frame.setMenuBar(menuController);
 
-//        services.saveSlideShowTo(new XMLWriter(), "resources/slideshow_test_out.xml");
-
-    }
-
-    public void drawNextSlide(){
-        services.nextSlide();
-    }
-
-    public void drawPreviousSlide(){
-        services.previousSlide();
     }
 
     @Override
     public void update(Command command) {
-        command.execute();
         repaint();
     }
 
@@ -67,12 +58,12 @@ public class SlideShowProjector extends Projector{
         String slideCount = services.getCurrentSlideIndex() + "/" + services.getSlideShowLength();
 
         g.setFont(defaultFont);
-        int fontHeight = getFontMetrics(defaultFont).getHeight();
+        int slideCountY = getBounds().height - g.getFontMetrics().getHeight() - COUNTER_OFFSET;
         int fontWidth = defaultFont.getSize();
         int textOffset = COUNTER_OFFSET + fontWidth * slideCount.length();
 
         g.setColor(Color.BLACK);
-        g.drawString(slideCount, COUNTER_OFFSET, frame.getHeight() - fontHeight - COUNTER_OFFSET);
+        g.drawString(slideCount, COUNTER_OFFSET, slideCountY);
 
         Rectangle boundingBox = new Rectangle(textOffset, 0, frame.getWidth()-textOffset, frame.getHeight());
 

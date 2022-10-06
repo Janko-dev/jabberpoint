@@ -5,29 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
-      <change afterPath="$PROJECT_DIR$/examples/slideshow_test_out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Communication/OpenXMLCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controls/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/cat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/SaveCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/slideshow_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/slideshow_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Communication/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/slideshow_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/slideshow_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/slideshow_test_out.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Communication/NextCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/NextCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/OpenXMLCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/OpenCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Communication/PreviousCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/PreviousCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideShowIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideShowIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/DomainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/DomainBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/DomainServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/DomainServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/DOMDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/DOMDeserializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/DomainServicesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/DomainServicesFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/RenderVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/RenderVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/SlideShowBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/SlideShowBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/SlideShowDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/SlideShowDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/XMLSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/XMLSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Projector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Projector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>

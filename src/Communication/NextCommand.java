@@ -1,18 +1,17 @@
 package Communication;
 
-import UI.Projector;
-import UI.SlideShowProjector;
+import Domain.Services.DomainServices;
 
 public class NextCommand implements Command{
 
-    public SlideShowProjector receiver;
+    public DomainServices receiver;
 
-    public NextCommand(SlideShowProjector receiver){
+    public NextCommand(DomainServices receiver){
         this.receiver = receiver;
     }
 
     @Override
     public void execute() {
-        this.receiver.drawNextSlide();
+        this.receiver.nextSlide();
     }
 }

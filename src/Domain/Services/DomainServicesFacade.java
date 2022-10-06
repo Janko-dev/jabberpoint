@@ -1,5 +1,7 @@
 package Domain.Services;
 
+import Communication.Command;
+import Communication.Observer;
 import Domain.Core.Iterator.Iterator;
 import Domain.Core.Slide;
 import Domain.Core.SlideShow;
@@ -8,7 +10,7 @@ import Infrastructure.Writer;
 
 import java.io.IOException;
 
-public class DomainServicesFacade implements DomainServices{
+public class DomainServicesFacade implements DomainServices, Observer {
 
     private SlideShow slideShow;
     private Iterator<Slide> slideShowIterator;
@@ -54,5 +56,10 @@ public class DomainServicesFacade implements DomainServices{
     @Override
     public int getSlideShowLength() {
         return slideShow.components.size();
+    }
+
+    @Override
+    public void update(Command command) {
+        command.execute();
     }
 }

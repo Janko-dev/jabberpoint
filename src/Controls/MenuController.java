@@ -1,58 +1,111 @@
 package Controls;
 
-import Communication.Command;
-import Communication.Observable;
-import Communication.Observer;
-import Communication.OpenXMLCommand;
+import Communication.*;
 import Domain.Services.DomainServices;
-import Infrastructure.FileUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class MenuController extends MenuBar implements Observable {
 
     private ArrayList<Observer> observers;
     private DomainServices services;
-    private JFrame parent;
 
-    public MenuController(DomainServices services, JFrame parent){
+    public MenuController(DomainServices services){
         this.services = services;
-        this.parent = parent;
         observers = new ArrayList<>();
-        Menu fileMenu = new Menu("file");
+        // File menu: Open, Save
+        Menu fileMenu = new Menu("File");
         addOpenMenuItem(fileMenu);
-
+        fileMenu.addSeparator();
+        addSaveMenuItem(fileMenu);
         add(fileMenu);
+
+        // View menu: Next slide, Previous slide, Exit
+        Menu viewMenu = new Menu("View");
+        addNextViewMenuItem(viewMenu);
+        viewMenu.addSeparator();
+        addPreviousViewMenuItem(viewMenu);
+        viewMenu.addSeparator();
+        addExitMenuItem(viewMenu);
+        add(viewMenu);
+
+        // Help menu: About box
+        Menu helpMenu = new Menu("Help");
+        addAboutBox(helpMenu);
+        add(helpMenu);
     }
 
-    private void addOpenMenuItem(Menu menu){
-        MenuItem menuItem = mkMenuItem("open");
+    private void addAboutBox(Menu menu) {
+        MenuItem menuItem = mkMenuItem("About");
         menuItem.addActionListener(e -> {
-            JFileChooser chooser = new JFileChooser();
-            chooser.setCurrentDirectory(new java.io.File("."));
-            chooser.setSelectedFile(new File(""));
-            chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-            if (chooser.showOpenDialog(parent) == JFileChooser.OPEN_DIALOG) {
-                File file = chooser.getSelectedFile();
-//                System.out.println(FileUtils.getExtension(file));
-                switch (FileUtils.getExtension(file)){
-                    case "xml":
-                        notifyObservers(new OpenXMLCommand(services, file.toString()));
-                        break;
-                    default: break;
-                }
-            }
+            JOptionPane.showMessageDialog(new Frame(),
+                    "Jabberpoint is a slide show presentation tool developed for the master course Design for Change at the Open University. \n" +
+                            "The project is meant to demonstrate the process of creating software in a future-proof way, \n" +
+                            "by using an agreed upon ubiquitous language, applying common Object-Oriented design patterns, \n" +
+                            "and following several design principles.\n",
+                    "About JabberPoint",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+        });
+        menu.add(menuItem);
+    }
+
+    private void addExitMenuItem(Menu menu) {
+        MenuItem menuItem = mkMenuItem("Exit");
+        menuItem.addActionListener(e -> {
+            notifyObservers(new ExitCommand());
+        });
+        menu.add(menuItem);
+    }
+
+    private void addPreviousViewMenuItem(Menu menu) {
+        MenuItem menuItem = mkMenuItem("Previous slide");
+        menuItem.addActionListener(e -> {
+            notifyObservers(new PreviousCommand(services));
+        });
+        menu.add(menuItem);
+    }
+
+    private void addNextViewMenuItem(Menu menu) {
+        MenuItem menuItem = mkMenuItem("Next slide");
+        menuItem.addActionListener(e -> {
+            notifyObservers(new NextCommand(services));
         });
         menu.add(menuItem);
     }
 
 
+    private void addOpenMenuItem(Menu menu){
+        MenuItem menuItem = mkMenuItem("Open");
+        menuItem.addActionListener(e -> {
+            FileDialog fileDialog = new FileDialog(new Frame(), "Pick a file to load", FileDialog.LOAD);
+            fileDialog.setDirectory(System.getProperty("user.dir"));
+            fileDialog.setVisible(true);
+            String filePath = fileDialog.getDirectory() + fileDialog.getFile();
+            if (filePath != null) {
+                notifyObservers(new OpenCommand(services, filePath));
+            }
+        });
+        menu.add(menuItem);
+    }
+
+    private void addSaveMenuItem(Menu menu){
+        MenuItem menuItem = mkMenuItem("Save");
+        menuItem.addActionListener(e -> {
+            FileDialog fileDialog = new FileDialog(new Frame(), "Save as", FileDialog.SAVE);
+            fileDialog.setDirectory(System.getProperty("user.dir"));
+            fileDialog.setFile("*.xml");
+            fileDialog.setVisible(true);
+            String filePath = fileDialog.getDirectory() + fileDialog.getFile();
+            if (filePath != null) {
+                notifyObservers(new SaveCommand(services, filePath));
+            }
+        });
+        menu.add(menuItem);
+    }
 
     private MenuItem mkMenuItem(String name) {
         return new MenuItem(name, new MenuShortcut(name.charAt(0)));

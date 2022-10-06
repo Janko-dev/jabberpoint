@@ -39,7 +39,13 @@ public class RenderVisitor implements Visitor {
 
     @Override
     public void visitImageItem(ImageItem imageItem) {
-
+        graphics.drawImage(imageItem.buffer,
+                xOffset + posX,
+                yOffset + posY,
+                imageItem.buffer.getWidth(),
+                imageItem.buffer.getHeight(),
+                null);
+        posY += imageItem.buffer.getHeight();
     }
 
     @Override
@@ -53,15 +59,6 @@ public class RenderVisitor implements Visitor {
 
     @Override
     public void visitTableItem(Table table) {
-//        int savedPosX = posX;
-//        int savedPosY = posY;
-        // 0,0  0,1
-        // 1,0  1,1
-        // 2,0  2,1
-
-        // 0,0 = 0*3 + 0 = 0
-        // 0,1 = 0*3 + 1 = 1
-        // 1,0 = 1*3 + 0 = 3
 
         for (int i = 0; i < table.rows; i++){
             for (int j = 0; j < table.cols; j++){
@@ -83,7 +80,5 @@ public class RenderVisitor implements Visitor {
             }
             posY += graphics.getFontMetrics().getHeight() + 10;
         }
-//        posX = savedPosX;
-//        posY = savedPosY;
     }
 }

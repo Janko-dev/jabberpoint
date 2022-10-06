@@ -1,10 +1,6 @@
 package UI;
 
-import Communication.Command;
 import Communication.Observer;
-import Controls.KeyBoardController;
-import Domain.Core.SlideShow;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -32,7 +28,7 @@ public abstract class Projector extends Canvas implements Observer {
         frame.setVisible(true);
         frame.toFront();
         frame.requestFocus();
-        this.createBufferStrategy(3);
+//        this.createBufferStrategy(3);
         start();
     }
 

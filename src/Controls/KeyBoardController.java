@@ -1,6 +1,7 @@
 package Controls;
 
 import Communication.*;
+import Domain.Services.DomainServicesFacade;
 import UI.Projector;
 import UI.SlideShowProjector;
 
@@ -11,11 +12,11 @@ import java.util.ArrayList;
 public class KeyBoardController extends KeyAdapter implements Observable {
 
     private ArrayList<Observer> observers;
-    private SlideShowProjector projector;
+    private DomainServicesFacade services;
 
-    public KeyBoardController(SlideShowProjector projector){
+    public KeyBoardController(DomainServicesFacade services){
         observers = new ArrayList<>();
-        this.projector = projector;
+        this.services = services;
     }
 
     @Override
@@ -27,24 +28,22 @@ public class KeyBoardController extends KeyAdapter implements Observable {
             case KeyEvent.VK_SPACE:
             case KeyEvent.VK_RIGHT:
             case '+':
-                notifyObservers(new NextCommand(projector));
+                notifyObservers(new NextCommand(services));
                 break;
             case KeyEvent.VK_PAGE_UP:
             case KeyEvent.VK_UP:
             case KeyEvent.VK_LEFT:
             case '-':
-                notifyObservers(new PreviousCommand(projector));
+                notifyObservers(new PreviousCommand(services));
                 break;
             case 'q':
             case 'Q':
-                System.exit(0);
+                notifyObservers(new ExitCommand());
                 break;
             default:
                 break;
-
         }
     }
-
 
     @Override
     public void addObserver(Observer observer) {

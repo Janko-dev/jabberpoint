@@ -1,18 +1,17 @@
 package Communication;
 
-import UI.Projector;
-import UI.SlideShowProjector;
+import Domain.Services.DomainServices;
 
 public class PreviousCommand implements Command{
-    public SlideShowProjector receiver;
+    public DomainServices receiver;
 
-    public PreviousCommand(SlideShowProjector receiver){
+    public PreviousCommand(DomainServices receiver){
         this.receiver = receiver;
     }
 
     @Override
     public void execute() {
-        this.receiver.drawPreviousSlide();
+        this.receiver.previousSlide();
     }
 
 }

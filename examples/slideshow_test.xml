@@ -27,7 +27,7 @@
         <text>this is a list</text>
         <list>
             <text> hello world </text>
-            <image src="./test_img.png"/>
+            <image src="examples/cat.png"/>
             <list>
                 <text> list_item1 </text>
                 <text> list_item2 </text>

@@ -12,6 +12,9 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+
 public class DOMDeserializer implements Deserializer {
 
     private Document document;
