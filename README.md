@@ -78,6 +78,86 @@ This rule is a *constraint* rule for the **start slide show action**. It specifi
 #### Slide show navigation rule
 this rule is a *strategy* rule for the **change slide action**. It specifies that the navigation through the slide show should be from the first slide to the last slide in a linear way. To be able to navigate to a next or previous slide, there should be a valid slide available that corresponds to the requested action.
 
+### Entity responsibilities 
+The responsibilities of the entities define what the entity knows and what it can do.
+
+#### Slideshow
+
+| Type | Responsibility              | Comments                                            |
+|======|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | slides                      | collection of slides                                |
+|      | meta information            | title, author, date                                 |
+| Can  |                             |                                                     |
+|      | navigation trough slides    |                                                     |
+
+#### Slide
+
+| Type | Responsibility              | Comments                                            |
+|======|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | items                       | collection of items                                 |
+|      |                             |                                                     |
+| Can  |                             |                                                     |
+|      | navigation trough items     |                                                     |
+
+#### Item
+
+| Type | Responsibility              | Comments                                            |
+|======|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | depth                       | structuring depth                                   |
+|      | styles                      | collection of styles e.g. color or size             |
+|      | items                       | only in case of composite items like list and table |
+| Can  |                             |                                                     |
+|      |                             |                                                     |
+
+#### Style
+
+| Type | Responsibility              | Comments                                            |
+|======|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | style type                  | e.g. color or font                                  |
+|      |                             |                                                     |
+| Can  |                             |                                                     |
+|      | return style information    |                                                     |
+
+### Mapping domain to patterns
+
+#### Composite
+
+| Class              | Role in the pattern | Comments                                      |
+|--------------------|---------------------|-----------------------------------------------|
+| SlideShowComponent | Component           | abstract class                                |
+| SlideShowComposite | Composite           | abstract class                                |
+| List               | Composite           | concrete class                                |
+| SlideShow          | Composite           | concrete class, only one may exist            |
+| Slide              | Composite           | concrete class                                |
+| SlideItem          | Leaf                | abstract class                                |
+| TextItem           | Leaf                | concrete class                                |
+| ImageItem          | Leaf                | concrete class                                | 
+
+#### Iterator
+
+| Class              | Role in the pattern | Comments                                      |
+|--------------------|---------------------|-----------------------------------------------|
+| Iterator           | Iterator            | interface class                               |
+| SlideShowIterator  | Concrete Iterator   |                                               |
+| SlideIterator      | Concrete Iterator   |                                               |
+| Iterable           | Aggregate           |                                               |
+| SlideShow          | Concrete Aggregate  |                                               |
+| Slide              | Concrete Aggregate  |                                               |
+| List               | Concrete Aggregate  |                                               |
+| Table              | Concrete Aggregate  |                                               |           
+
+#### Strategy
+| Class              | Role in the pattern | Comments                                      |
+|--------------------|---------------------|-----------------------------------------------|
+| SlideShowComponent | Composition         |                                               |
+| Style              | Compositor          | interface class                               | 
+| FontStyle          | Concrete Compositor |                                               |
+| ColorStyle         | Concrete Compositor |                                               |
+
 ### Considerations
 There were a couple of deliberations during the composition of the ubiquitous language, that would be beneficial to discuss. 
 
