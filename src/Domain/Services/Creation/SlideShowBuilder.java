@@ -1,4 +1,4 @@
-package Domain.Services;
+package Domain.Services.Creation;
 
 import Domain.Core.Slide;
 import Domain.Core.SlideShow;
@@ -24,17 +24,17 @@ public class SlideShowBuilder implements DomainBuilder<SlideShow>{
 
     @Override
     public void setTitle() {
-        this.slideShow.title = converter.parseTitle();
+        this.slideShow.setTitle(converter.parseTitle());
     }
 
     @Override
     public void setAuthor() {
-        this.slideShow.author = converter.parseAuthor();
+        this.slideShow.setAuthor(converter.parseAuthor());
     }
 
     @Override
     public void setDate() {
-        this.slideShow.date = converter.parseDate();
+        this.slideShow.setDate(converter.parseDate());
     }
 
     @Override
@@ -42,7 +42,7 @@ public class SlideShowBuilder implements DomainBuilder<SlideShow>{
         for (int index = 0, len = converter.getSlidesLength(); index < len; index++){
             Slide newSlide = converter.convertToSlide(index);
             if (newSlide == null) return;
-            this.slideShow.components.add(newSlide);
+            this.slideShow.getComponents().add(newSlide);
         }
     }
 

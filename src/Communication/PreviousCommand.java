@@ -1,6 +1,6 @@
 package Communication;
 
-import Domain.Services.DomainServices;
+import Domain.Services.Facade.DomainServices;
 
 public class PreviousCommand implements Command{
     public DomainServices receiver;

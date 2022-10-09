@@ -1,8 +1,8 @@
 package Domain.Core;
 
 import Domain.Core.Iterator.Iterator;
-import Domain.Core.Iterator.SlideIterator;
-import Domain.Services.Visitor;
+import Domain.Core.Iterator.SlideShowIterator;
+import Domain.Services.Visitors.DomainVisitor;
 
 import java.util.ArrayList;
 
@@ -13,12 +13,12 @@ public class Slide extends SlideShowComposite{
     }
 
     @Override
-    public Iterator<SlideShowComponent> createIterator() {
-        return new SlideIterator(components);
+    public Iterator createIterator() {
+        return new SlideShowIterator(components);
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(DomainVisitor v) {
         v.visitSlide(this);
     }
 }

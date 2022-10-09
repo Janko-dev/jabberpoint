@@ -1,19 +1,19 @@
-package Domain.Services;
+package Domain.Services.Facade;
 
 import Communication.Command;
 import Communication.Observer;
 import Domain.Core.Iterator.Iterator;
-import Domain.Core.Slide;
 import Domain.Core.SlideShow;
+import Domain.Core.SlideShowComponent;
+import Domain.Services.Creation.SlideShowBuilder;
+import Domain.Services.Creation.SlideShowDirector;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
-
-import java.io.IOException;
 
 public class DomainServicesFacade implements DomainServices, Observer {
 
     private SlideShow slideShow;
-    private Iterator<Slide> slideShowIterator;
+    private Iterator slideShowIterator;
 
     @Override
     public void createSlideShowFrom(Reader reader, String filePath) {
@@ -44,7 +44,7 @@ public class DomainServicesFacade implements DomainServices, Observer {
     }
 
     @Override
-    public Slide getCurrentSlide() {
+    public SlideShowComponent getCurrentSlide() {
         return slideShowIterator.current();
     }
 
@@ -55,7 +55,7 @@ public class DomainServicesFacade implements DomainServices, Observer {
 
     @Override
     public int getSlideShowLength() {
-        return slideShow.components.size();
+        return slideShow.getComponents().size();
     }
 
     @Override

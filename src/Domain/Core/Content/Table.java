@@ -1,16 +1,23 @@
 package Domain.Core.Content;
 
 import Domain.Core.Iterator.Iterator;
-import Domain.Core.Iterator.SlideIterator;
-import Domain.Core.SlideShowComponent;
+import Domain.Core.Iterator.SlideShowIterator;
 import Domain.Core.SlideShowComposite;
-import Domain.Services.Visitor;
+import Domain.Services.Visitors.DomainVisitor;
 
 import java.util.ArrayList;
 
 public class Table extends SlideShowComposite {
 
-    public int rows, cols;
+    private int rows, cols;
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
+    }
 
     public Table(int rows, int cols){
         this.cols = cols;
@@ -18,12 +25,12 @@ public class Table extends SlideShowComposite {
         this.components = new ArrayList<>();
     }
     @Override
-    public Iterator<SlideShowComponent> createIterator() {
-        return new SlideIterator(this.components);
+    public Iterator createIterator() {
+        return new SlideShowIterator(this.components);
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(DomainVisitor v) {
         v.visitTableItem(this);
     }
 }

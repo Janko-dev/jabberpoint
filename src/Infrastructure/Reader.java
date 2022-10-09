@@ -1,10 +1,8 @@
 package Infrastructure;
 
-import Domain.Services.Deserializer;
+import Domain.Services.Creation.Deserializer;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 public abstract class Reader {
 

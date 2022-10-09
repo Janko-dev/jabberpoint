@@ -3,22 +3,19 @@ package UI;
 import Communication.Command;
 import Controls.KeyBoardController;
 import Controls.MenuController;
-import Domain.Core.Slide;
-import Domain.Core.SlideShow;
-import Domain.Services.DomainServicesFacade;
-import Domain.Services.RenderVisitor;
+import Domain.Core.SlideShowComponent;
+import Domain.Services.Facade.DomainServicesFacade;
+import Domain.Services.Visitors.DomainRenderer;
 import Infrastructure.XMLReader;
-import Infrastructure.XMLWriter;
 
 import java.awt.*;
-import java.awt.image.BufferStrategy;
 
 public class SlideShowProjector extends Projector{
 
     private static final int COUNTER_OFFSET = 20;
     private DomainServicesFacade services;
     private static Font defaultFont;
-    private RenderVisitor visitor;
+    private DomainRenderer visitor;
 
     public SlideShowProjector(String title, int screenWidth, int screenHeight){
         super(title, screenWidth, screenHeight);
@@ -67,8 +64,8 @@ public class SlideShowProjector extends Projector{
 
         Rectangle boundingBox = new Rectangle(textOffset, 0, frame.getWidth()-textOffset, frame.getHeight());
 
-        visitor = new RenderVisitor(g, boundingBox);
-        Slide current = services.getCurrentSlide();
+        visitor = new DomainRenderer(g, boundingBox);
+        SlideShowComponent current = services.getCurrentSlide();
         current.accept(visitor);
 
         g.dispose();

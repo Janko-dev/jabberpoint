@@ -1,9 +1,7 @@
 package Infrastructure;
 
-import Domain.Core.Iterator.Iterator;
-import Domain.Core.Slide;
 import Domain.Core.SlideShow;
-import Domain.Services.XMLSerializer;
+import Domain.Services.Visitors.XMLSerializer;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -47,14 +45,7 @@ public class XMLWriter extends Writer{
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             xmlSerializer.setBufferedWriter(writer);
             writer.write(META_DTD);
-            writer.write("<slideshow>\n");
-            writer.write("\t<title>" + slideShow.title + "</title>\n");
-            writer.write("\t<author>" + slideShow.author + "</author>\n");
-            writer.write("\t<date>" + slideShow.date + "</date>\n");
-            for (Iterator<Slide> iter = slideShow.createIterator(); !iter.isDone(); iter.next()) {
-                xmlSerializer.visitSlide(iter.current());
-            }
-            writer.write("</slideshow>");
+            slideShow.accept(xmlSerializer);
             writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

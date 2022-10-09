@@ -78,13 +78,15 @@ This rule is a *constraint* rule for the **start slide show action**. It specifi
 #### Slide show navigation rule
 this rule is a *strategy* rule for the **change slide action**. It specifies that the navigation through the slide show should be from the first slide to the last slide in a linear way. To be able to navigate to a next or previous slide, there should be a valid slide available that corresponds to the requested action.
 
+## Design of the domain
+
 ### Entity responsibilities 
 The responsibilities of the entities define what the entity knows and what it can do.
 
 #### Slideshow
 
 | Type | Responsibility              | Comments                                            |
-|======|-----------------------------|-----------------------------------------------------|
+|------|-----------------------------|-----------------------------------------------------|
 | Know |                             |                                                     |
 |      | slides                      | collection of slides                                |
 |      | meta information            | title, author, date                                 |
@@ -94,7 +96,7 @@ The responsibilities of the entities define what the entity knows and what it ca
 #### Slide
 
 | Type | Responsibility              | Comments                                            |
-|======|-----------------------------|-----------------------------------------------------|
+|------|-----------------------------|-----------------------------------------------------|
 | Know |                             |                                                     |
 |      | items                       | collection of items                                 |
 |      |                             |                                                     |
@@ -104,7 +106,7 @@ The responsibilities of the entities define what the entity knows and what it ca
 #### Item
 
 | Type | Responsibility              | Comments                                            |
-|======|-----------------------------|-----------------------------------------------------|
+|------|-----------------------------|-----------------------------------------------------|
 | Know |                             |                                                     |
 |      | depth                       | structuring depth                                   |
 |      | styles                      | collection of styles e.g. color or size             |
@@ -115,7 +117,7 @@ The responsibilities of the entities define what the entity knows and what it ca
 #### Style
 
 | Type | Responsibility              | Comments                                            |
-|======|-----------------------------|-----------------------------------------------------|
+|------|-----------------------------|-----------------------------------------------------|
 | Know |                             |                                                     |
 |      | style type                  | e.g. color or font                                  |
 |      |                             |                                                     |
@@ -149,7 +151,8 @@ The responsibilities of the entities define what the entity knows and what it ca
 | Slide              | Concrete Aggregate  |                                               |
 | List               | Concrete Aggregate  |                                               |
 | Table              | Concrete Aggregate  |                                               |           
-
+
+
 #### Strategy
 | Class              | Role in the pattern | Comments                                      |
 |--------------------|---------------------|-----------------------------------------------|
@@ -167,7 +170,8 @@ Another entity that was considered, but ultimately removed from the ubiquitous l
 
 It is considered to add an abstract Accessor class as parent of Reader and Writer. That way shared Reader/Writer method could be added to the Accessor instead of adding the FileUtils class. This would make the implementation of DomainDirector more complicated as now the DomainDirector can have different reader/writer protocols at the same time. Otherwise, it would be slightly harder to differentiate between a reader Accessor and a writer Accessor.
 
-## Design of the domain
+## Design of the creation of objects (and reading
+and writing)
 
 ## Design notes:
 - For the UI, we use a combination of the Command pattern and the Observer pattern. this seems to be overkill. However, in the face of extendibility, one could imagine the observable (i.e., the keyboard controller) to notify not only a slideshow projector, but also many other devices to allow streaming/screen-sharing functionality. In the same vein, commands are initialised in the keyboard controller, with a passed reference to the current projector, then updated by the same projector during an observer notification, and then executed, which delegates command execution back and forth. This also seems like overkill, however, it serves the purpose of extending commands with functionality that is not only linked to the projector, but for instance to the styling of the slide show components (making every character larger for example).

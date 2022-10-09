@@ -1,9 +1,7 @@
 package Controls;
 
 import Communication.*;
-import Domain.Services.DomainServicesFacade;
-import UI.Projector;
-import UI.SlideShowProjector;
+import Domain.Services.Facade.DomainServicesFacade;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

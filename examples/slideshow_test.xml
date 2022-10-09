@@ -4,11 +4,23 @@
         <!ELEMENT title (#PCDATA)>
         <!ELEMENT author (#PCDATA)>
         <!ELEMENT date (#PCDATA)>
+
         <!ELEMENT slide (text|image|list|table)*>
+        <!ATTLIST slide background CDATA #IMPLIED>
+
         <!ELEMENT text (#PCDATA)>
+        <!ATTLIST text color CDATA #IMPLIED>
+        <!ATTLIST text font CDATA #IMPLIED>
+        <!ATTLIST text size CDATA #IMPLIED>
+
         <!ELEMENT image EMPTY>
         <!ATTLIST image src CDATA #REQUIRED>
+        <!ATTLIST image width CDATA #REQUIRED>
+        <!ATTLIST image height CDATA #REQUIRED>
+
         <!ELEMENT list (text|image|list|table)*>
+        <!ATTLIST list bullet_point CDATA #IMPLIED>
+
         <!ELEMENT table (row)*>
         <!ELEMENT row (text|image|list|table)*>
         <!ATTLIST table rows CDATA #REQUIRED>
@@ -27,7 +39,7 @@
         <text>this is a list</text>
         <list>
             <text> hello world </text>
-            <image src="examples/cat.png"/>
+            <image src="examples/cat.png" width="100" height="100"/>
             <list>
                 <text> list_item1 </text>
                 <text> list_item2 </text>

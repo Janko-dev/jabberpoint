@@ -1,4 +1,4 @@
-package Domain.Services;
+package Domain.Services.Creation;
 
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
@@ -11,9 +11,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import javax.imageio.ImageIO;
-import java.io.File;
 
 public class DOMDeserializer implements Deserializer {
 
@@ -35,7 +32,7 @@ public class DOMDeserializer implements Deserializer {
         for (int i = 0, len = items.getLength(); i < len; i++){
             Node current = items.item(i);
             if (current.getNodeType() != Node.ELEMENT_NODE) continue;
-            newSlide.components.add(convertToItem(current));
+            newSlide.getComponents().add(convertToItem(current));
         }
         return newSlide;
     }
@@ -64,17 +61,28 @@ public class DOMDeserializer implements Deserializer {
         String typeName = node.getNodeName();
         switch (typeName) {
             case "text":
-                return new TextItem(node.getTextContent());
+                return convertToTextItem(node);
             case "list":
                 return convertToList(node);
             case "image":
-                String src = node.getAttributes().getNamedItem("src").getTextContent();
-                return new ImageItem(src);
+                return convertToImageItem(node);
             case "table":
                 return convertToTable(node);
             default:
                 throw new RuntimeException("Unreachable, expected specific node type");
         }
+    }
+
+    private TextItem convertToTextItem(Node node){
+        return new TextItem(node.getTextContent());
+    }
+
+    private ImageItem convertToImageItem(Node node) {
+        NamedNodeMap attrs = node.getAttributes();
+        String src = attrs.getNamedItem("src").getTextContent();
+        int width = Integer.parseInt(attrs.getNamedItem("width").getTextContent());
+        int height = Integer.parseInt(attrs.getNamedItem("height").getTextContent());
+        return new ImageItem(src, width, height);
     }
 
     private Table convertToTable(Node node) {
@@ -86,18 +94,14 @@ public class DOMDeserializer implements Deserializer {
         NodeList rowNodes = node.getChildNodes();
         for (int i = 0, rowLen = rowNodes.getLength(); i < rowLen; i++) {
             if (rowNodes.item(i).getNodeType() != Node.ELEMENT_NODE) continue;
-//            List tableRow = convertToList(children.item(i));
-//            ErrorUtils.assertEquals(tableRow.components.size() == cols,
-//                    "Row elements must match specified columns in XML");
-//            tableComposite.components.add(tableRow);
 
             NodeList colNodes = rowNodes.item(i).getChildNodes();
             for (int j = 0, colLen = colNodes.getLength(); j < colLen; j++){
                 if (colNodes.item(j).getNodeType() != Node.ELEMENT_NODE) continue;
-                tableComposite.components.add(convertToItem(colNodes.item(j)));
+                tableComposite.getComponents().add(convertToItem(colNodes.item(j)));
             }
         }
-        ErrorUtils.assertEquals(tableComposite.components.size() == rows*cols,
+        ErrorUtils.assertEquals(tableComposite.getComponents().size() == rows*cols,
                 "Table rows and columns must match specified rows and cols in XML");
         return tableComposite;
     }
@@ -107,7 +111,7 @@ public class DOMDeserializer implements Deserializer {
         List listComposite = new List();
         for (int i = 0, len = children.getLength(); i < len; i++) {
             if (children.item(i).getNodeType() != Node.ELEMENT_NODE) continue;
-            listComposite.components.add(convertToItem(children.item(i)));
+            listComposite.getComponents().add(convertToItem(children.item(i)));
         }
         return listComposite;
     }

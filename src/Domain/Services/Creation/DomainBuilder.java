@@ -1,4 +1,4 @@
-package Domain.Services;
+package Domain.Services.Creation;
 
 public interface DomainBuilder<T> {
 

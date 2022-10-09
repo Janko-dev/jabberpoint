@@ -1,6 +1,7 @@
-package Domain.Services;
+package Domain.Services.Facade;
 
 import Domain.Core.Slide;
+import Domain.Core.SlideShowComponent;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
 
@@ -11,7 +12,7 @@ public interface DomainServices {
 
     public void nextSlide();
     public void previousSlide();
-    public Slide getCurrentSlide();
+    public SlideShowComponent getCurrentSlide();
     public int getCurrentSlideIndex();
     public int getSlideShowLength();
 

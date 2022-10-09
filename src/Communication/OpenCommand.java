@@ -1,11 +1,10 @@
 package Communication;
 
-import Domain.Services.DomainServices;
+import Domain.Services.Facade.DomainServices;
 import Infrastructure.FileUtils;
 import Infrastructure.Reader;
 import Infrastructure.XMLReader;
 
-import java.io.File;
 import java.util.HashMap;
 
 public class OpenCommand implements Command{

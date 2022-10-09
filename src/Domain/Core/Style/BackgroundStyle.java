@@ -2,7 +2,8 @@ package Domain.Core.Style;
 
 import Domain.Services.Visitors.StyleVisitor;
 
-public class ColorStyle implements Style{
+public class BackgroundStyle implements Style{
+
     private int red, green, blue;
 
     public int getRed() {
@@ -17,7 +18,7 @@ public class ColorStyle implements Style{
         return blue;
     }
 
-    public ColorStyle(int red, int green, int blue) {
+    public BackgroundStyle(int red, int green, int blue) {
         this.red = red;
         this.green = green;
         this.blue = blue;
@@ -25,6 +26,6 @@ public class ColorStyle implements Style{
 
     @Override
     public void accept(StyleVisitor v) {
-        v.visitColorStyle(this);
+        v.visitBackgroundStyle(this);
     }
 }

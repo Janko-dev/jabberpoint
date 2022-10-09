@@ -1,11 +1,10 @@
 package Domain.Core.Iterator;
 
-import Domain.Core.Slide;
 import Domain.Core.SlideShowComponent;
 
 import java.util.ArrayList;
 
-public class SlideShowIterator implements Iterator<Slide>{
+public class SlideShowIterator implements Iterator{
 
     private ArrayList<SlideShowComponent> slides;
     private int index;
@@ -41,12 +40,8 @@ public class SlideShowIterator implements Iterator<Slide>{
     }
 
     @Override
-    public Slide current() {
-        return (Slide)slides.get(index);
+    public SlideShowComponent current() {
+        return slides.get(index);
     }
 
-    @Override
-    public void setCurrent(int index) {
-        this.index = index;
-    }
 }
