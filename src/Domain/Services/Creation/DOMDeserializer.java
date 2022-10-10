@@ -6,16 +6,19 @@ import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
 import Domain.Core.Slide;
 import Domain.Core.SlideShowComponent;
+import Domain.Core.Style.*;
 import Utils.ErrorUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.util.Arrays;
+
 public class DOMDeserializer implements Deserializer {
 
-    private Document document;
-    private NodeList slides;
+    private final Document document;
+    private final NodeList slides;
 
     public DOMDeserializer(Document document){
         this.document = document;
@@ -24,11 +27,17 @@ public class DOMDeserializer implements Deserializer {
 
     @Override
     public Slide convertToSlide(int nodeIndex) {
-        Slide newSlide = new Slide();
         Node DOMslide = slides.item(nodeIndex);
         if (DOMslide.getNodeType() != Node.ELEMENT_NODE) return null;
-        NodeList items = DOMslide.getChildNodes();
 
+        Slide newSlide = new Slide();
+        NamedNodeMap attrs = DOMslide.getAttributes();
+        if (attrs.getNamedItem("background") != null){
+            String bg = attrs.getNamedItem("background").getTextContent();
+            newSlide.addStyle(new BackgroundStyle(convertToRGB(bg)));
+        }
+
+        NodeList items = DOMslide.getChildNodes();
         for (int i = 0, len = items.getLength(); i < len; i++){
             Node current = items.item(i);
             if (current.getNodeType() != Node.ELEMENT_NODE) continue;
@@ -74,7 +83,32 @@ public class DOMDeserializer implements Deserializer {
     }
 
     private TextItem convertToTextItem(Node node){
-        return new TextItem(node.getTextContent());
+        NamedNodeMap attrs = node.getAttributes();
+        TextItem textItem = new TextItem(node.getTextContent());
+        if (attrs.getNamedItem("color") != null){
+            String colorString = attrs.getNamedItem("color").getTextContent();
+            ColorStyle colorStyle = new ColorStyle(convertToRGB(colorString));
+            textItem.addStyle(colorStyle);
+        }
+
+        FontStyle fontStyle = new FontStyle();
+        if (attrs.getNamedItem("font") != null){
+            fontStyle.setFontName(attrs.getNamedItem("font").getTextContent());
+        }
+        if (attrs.getNamedItem("size") != null){
+            fontStyle.setFontSize(Integer.parseInt(attrs.getNamedItem("size").getTextContent().trim()));
+        }
+        textItem.addStyle(fontStyle);
+        return textItem;
+    }
+
+    private int[] convertToRGB(String colorString){
+        String[] colorParts = colorString.split(",");
+        ErrorUtils.assertEquals(colorParts.length == 3, "Color components must be in \"R,G,B\" form");
+        int red = Integer.parseInt(colorParts[0].trim());
+        int green = Integer.parseInt(colorParts[1].trim());
+        int blue = Integer.parseInt(colorParts[2].trim());
+        return new int[] { red, green, blue };
     }
 
     private ImageItem convertToImageItem(Node node) {
@@ -109,10 +143,33 @@ public class DOMDeserializer implements Deserializer {
     private List convertToList(Node node) {
         NodeList children = node.getChildNodes();
         List listComposite = new List();
+        NamedNodeMap attrs = node.getAttributes();
+        BulletPointStyle bulletPointStyle = null;
+        if (attrs.getNamedItem("bullet_point") != null){
+            String bulletPoint = attrs.getNamedItem("bullet_point").getTextContent();
+            bulletPointStyle = new BulletPointStyle(bulletPoint);
+        }
+
         for (int i = 0, len = children.getLength(); i < len; i++) {
             if (children.item(i).getNodeType() != Node.ELEMENT_NODE) continue;
-            listComposite.getComponents().add(convertToItem(children.item(i)));
+            SlideShowComponent component = convertToItem(children.item(i));
+            if (bulletPointStyle != null) distributeStyle(component, bulletPointStyle);
+            listComposite.getComponents().add(component);
         }
         return listComposite;
+    }
+
+    private void distributeStyle(SlideShowComponent component, Style distributableStyle){
+        int len = component.getStyles().size();
+        if (len == 0) component.addStyle(distributableStyle);
+        else {
+            int foundIndex = -1;
+            for (int i = 0; i < len; i++){
+                if (distributableStyle.getClass() == component.getStyle(i).getClass())
+                    foundIndex = i;
+            }
+            if (foundIndex != -1) component.setStyle(foundIndex, distributableStyle);
+            else component.addStyle(distributableStyle);
+        }
     }
 }

@@ -24,6 +24,12 @@ public class BackgroundStyle implements Style{
         this.blue = blue;
     }
 
+    public BackgroundStyle(int[] colorParts) {
+        this.red = colorParts[0];
+        this.green = colorParts[1];
+        this.blue = colorParts[2];
+    }
+
     @Override
     public void accept(StyleVisitor v) {
         v.visitBackgroundStyle(this);

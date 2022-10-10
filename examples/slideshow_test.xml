@@ -30,39 +30,45 @@
     <title>My first slide show</title>
     <author>John Doe</author>
     <date>02-10-2022</date>
-    <slide>
-        <text> test1 </text>
-        <text> test2 </text>
-        <text> test3 </text>
+    <slide background="20, 80, 66">
+        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
+        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
+        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
     </slide>
-    <slide>
-        <text>this is a list</text>
-        <list>
-            <text> hello world </text>
-            <image src="examples/cat.png" width="100" height="100"/>
-            <list>
-                <text> list_item1 </text>
-                <text> list_item2 </text>
+    <slide background="150, 0, 150">
+        <text size="38" color="255, 255, 0">This is a list</text>
+        <list bullet_point="-> ">
+            <text color="255, 255, 255"> hello world </text>
+            <image src="examples/cat.png" width="150" height="150"/>
+            <text color="0, 255, 255"> list-ception </text>
+            <list bullet_point=" - ">
+                <text color="255, 255, 255"> list_item1 </text>
+                <list bullet_point=" + ">
+                    <text color="255, 255, 0">Hello</text>
+                    <text>Goodnight</text>
+                </list>
+                <text color="0, 255, 0"> list_item2 </text>
             </list>
-            <text> na de sublist </text>
+            <text> After the sublist </text>
         </list>
+        <text size="32" color="255, 0,255"> After the list </text>
     </slide>
-    <slide>
-        <text>This is a table</text>
+    <slide background="200, 200, 220">
+        <text size="32" color="230, 0, 20">This is a table</text>
         <table rows="3" cols="2">
             <row>
-                <text> row1col1 </text>
+                <text color="0, 255, 0"> row1col1 </text>
                 <text> row1col2 </text>
             </row>
             <row>
                 <text> row2col1 </text>
-                <text> row2col2 </text>
+                <text color="255, 100, 30"> row2col2 </text>
             </row>
             <row>
-                <text> 1 </text>
-                <text> b </text>
+                <text> 100 </text>
+                <text> B </text>
             </row>
         </table>
-        <text>na de tabel</text>
+        <text>After the table</text>
     </slide>
 </slideshow>

@@ -14,9 +14,17 @@ public class FontStyle implements Style{
         return fontSize;
     }
 
-    public FontStyle(String fontName, int fontSize){
+    public void setFontName(String fontName) {
         this.fontName = fontName;
+    }
+
+    public void setFontSize(int fontSize) {
         this.fontSize = fontSize;
+    }
+
+    public FontStyle(){
+        this.fontName = "Arial";
+        this.fontSize = 20;
     }
 
     @Override

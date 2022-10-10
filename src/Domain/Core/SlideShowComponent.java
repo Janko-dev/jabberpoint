@@ -7,7 +7,22 @@ import java.util.ArrayList;
 
 public abstract class SlideShowComponent {
 
-    public ArrayList<Style> styles;
+    private ArrayList<Style> styles = new ArrayList<>();
+
+    public void addStyle(Style style){
+        styles.add(style);
+    }
+
+    public Style getStyle(int index){
+        return styles.get(index);
+    }
+    public Style setStyle(int index, Style style){
+        return styles.set(index, style);
+    }
+
+    public ArrayList<Style> getStyles(){
+        return styles;
+    }
 
     public abstract void accept(DomainVisitor v);
 }

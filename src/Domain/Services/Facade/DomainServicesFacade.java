@@ -5,10 +5,14 @@ import Communication.Observer;
 import Domain.Core.Iterator.Iterator;
 import Domain.Core.SlideShow;
 import Domain.Core.SlideShowComponent;
+import Domain.Core.Style.Style;
 import Domain.Services.Creation.SlideShowBuilder;
 import Domain.Services.Creation.SlideShowDirector;
+import Domain.Services.Visitors.StyleVisitor;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
+
+import java.awt.*;
 
 public class DomainServicesFacade implements DomainServices, Observer {
 
@@ -56,6 +60,16 @@ public class DomainServicesFacade implements DomainServices, Observer {
     @Override
     public int getSlideShowLength() {
         return slideShow.getComponents().size();
+    }
+
+    @Override
+    public String getMetaString() {
+        return slideShow.getTitle() + ": made by " + slideShow.getAuthor() + " on " + slideShow.getDate();
+    }
+
+    @Override
+    public String getSlideCount() {
+        return "slide " + getCurrentSlideIndex() + " of " + getSlideShowLength();
     }
 
     @Override

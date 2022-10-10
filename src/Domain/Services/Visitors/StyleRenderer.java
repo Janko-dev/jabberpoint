@@ -5,26 +5,27 @@ import Domain.Core.Style.BulletPointStyle;
 import Domain.Core.Style.ColorStyle;
 import Domain.Core.Style.FontStyle;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class StyleRenderer implements StyleVisitor{
 
-    private Graphics graphics;
+    private final DomainRenderer renderer;
 
-    public StyleRenderer(Graphics graphics){
-        this.graphics = graphics;
+    public StyleRenderer(DomainRenderer renderer){
+        this.renderer = renderer;
     }
 
     @Override
     public void visitFontStyle(FontStyle fontStyle) {
         Font font = new Font(fontStyle.getFontName(), Font.PLAIN, fontStyle.getFontSize());
-        graphics.setFont(font);
+        renderer.getGraphics().setFont(font);
     }
 
     @Override
     public void visitColorStyle(ColorStyle colorStyle) {
         Color color = new Color(colorStyle.getRed(), colorStyle.getGreen(), colorStyle.getBlue());
-        graphics.setColor(color);
+        renderer.getGraphics().setColor(color);
     }
 
     @Override
@@ -33,11 +34,18 @@ public class StyleRenderer implements StyleVisitor{
                 backgroundStyle.getRed(),
                 backgroundStyle.getGreen(),
                 backgroundStyle.getBlue());
-        graphics.setColor(color);
+        renderer.getGraphics().setColor(color);
+        renderer.getGraphics().fillRect(0, 0,
+                renderer.getBounds().width,
+                renderer.getBounds().height);
     }
 
     @Override
     public void visitBulletPointStyle(BulletPointStyle bulletPointStyle) {
-//        graphics.drawString(bulletPointStyle.getBulletPoint(), );
+        int fontHeight = renderer.getGraphics().getFontMetrics().getHeight();
+        renderer.getGraphics().drawString(bulletPointStyle.getBulletPoint(),
+                renderer.getxOffset() + renderer.getPosX(),
+                renderer.getyOffset() + renderer.getPosY() + fontHeight);
+        renderer.setPosX(renderer.getPosX() + renderer.getGraphics().getFont().getSize());
     }
 }
