@@ -13,8 +13,6 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import java.util.Arrays;
-
 public class DOMDeserializer implements Deserializer {
 
     private final Document document;
@@ -144,32 +142,16 @@ public class DOMDeserializer implements Deserializer {
         NodeList children = node.getChildNodes();
         List listComposite = new List();
         NamedNodeMap attrs = node.getAttributes();
-        BulletPointStyle bulletPointStyle = null;
         if (attrs.getNamedItem("bullet_point") != null){
             String bulletPoint = attrs.getNamedItem("bullet_point").getTextContent();
-            bulletPointStyle = new BulletPointStyle(bulletPoint);
+            listComposite.addStyle(new BulletPointStyle(bulletPoint));
         }
 
         for (int i = 0, len = children.getLength(); i < len; i++) {
             if (children.item(i).getNodeType() != Node.ELEMENT_NODE) continue;
             SlideShowComponent component = convertToItem(children.item(i));
-            if (bulletPointStyle != null) distributeStyle(component, bulletPointStyle);
             listComposite.getComponents().add(component);
         }
         return listComposite;
-    }
-
-    private void distributeStyle(SlideShowComponent component, Style distributableStyle){
-        int len = component.getStyles().size();
-        if (len == 0) component.addStyle(distributableStyle);
-        else {
-            int foundIndex = -1;
-            for (int i = 0; i < len; i++){
-                if (distributableStyle.getClass() == component.getStyle(i).getClass())
-                    foundIndex = i;
-            }
-            if (foundIndex != -1) component.setStyle(foundIndex, distributableStyle);
-            else component.addStyle(distributableStyle);
-        }
     }
 }

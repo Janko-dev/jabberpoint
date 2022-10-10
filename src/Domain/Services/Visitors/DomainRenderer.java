@@ -14,6 +14,7 @@ import java.awt.*;
 
 public class DomainRenderer implements DomainVisitor {
 
+    private static final int INDENT = 20;
     private final Graphics graphics;
     private final Rectangle bounds;
     private int posX = 0, posY = 0;
@@ -105,13 +106,32 @@ public class DomainRenderer implements DomainVisitor {
 
     @Override
     public void visitListItem(List list) {
-        posX += 20;
+        posX += INDENT;
         for (int i = 0, len = list.getLength(); i < len; i++){
             int savedPosX = posX;
+            for (Style style : list.getStyles()){
+                distributeStyle(list.getComponent(i), style);
+            }
             list.getComponent(i).accept(this);
+            for (Style style : list.getStyles()){
+                list.getComponent(i).removeStyle(style);
+            }
             posX = savedPosX;
         }
-        posX -= 20;
+        posX -= INDENT;
+    }
+
+    private void distributeStyle(SlideShowComponent component, Style distributableStyle){
+        int len = component.getStyles().size();
+        if (len == 0) component.addStyle(distributableStyle);
+        else {
+            boolean foundIndex = false;
+            for (int i = 0; i < len; i++){
+                if (distributableStyle.getClass() == component.getStyle(i).getClass())
+                    foundIndex = true;
+            }
+            if (!foundIndex) component.addStyle(distributableStyle);
+        }
     }
 
     @Override
@@ -120,7 +140,7 @@ public class DomainRenderer implements DomainVisitor {
         for (int i = 0; i < table.getRows(); i++){
             for (int j = 0; j < table.getCols(); j++){
                 int index = (i * table.getCols()) + j;
-                posX += j * ((bounds.width/table.getCols()) - 20);
+                posX += j * ((bounds.width-INDENT*2)/table.getCols()) + INDENT/2;
 
                 int tempHeight = posY;
                 table.getComponent(index).accept(this);
@@ -130,13 +150,13 @@ public class DomainRenderer implements DomainVisitor {
                 graphics.drawRect(
                         posX,
                         posY + fontHeight/2,
-                        (bounds.width/table.getCols()) - 20,
+                        ((bounds.width-INDENT*2)/table.getCols()),
                         posY - tempHeight);
 
-                posX -= j * ((bounds.width/table.getCols()) - 20);
-                posY -= fontHeight + 10;
+                posX -= j * ((bounds.width-INDENT*2)/table.getCols()) + INDENT/2;
+                posY -= fontHeight + INDENT/2;
             }
-            posY += graphics.getFontMetrics().getHeight() + 10;
+            posY += graphics.getFontMetrics().getHeight() + INDENT/2;
         }
     }
 }

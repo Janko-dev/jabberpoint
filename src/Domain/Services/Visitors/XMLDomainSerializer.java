@@ -12,13 +12,15 @@ import Domain.Core.Style.Style;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-public class XMLSerializer implements DomainVisitor {
+public class XMLDomainSerializer implements DomainVisitor {
 
     private int indent = 1;
     private BufferedWriter writer;
+    private XMLStyleSerializer xmlStyleSerializer = new XMLStyleSerializer();
 
     public void setBufferedWriter(BufferedWriter writer){
         this.writer = writer;
+        xmlStyleSerializer.setBufferedWriter(writer);
     }
 
     private void writeIndentation() throws IOException {
@@ -47,7 +49,7 @@ public class XMLSerializer implements DomainVisitor {
         try {
             writer.write("\t<slide");
             for (Style style : slide.getStyles()){
-                writer.write(style.)
+                style.accept(xmlStyleSerializer);
             }
             writer.write(">\n");
             indent++;
@@ -65,7 +67,11 @@ public class XMLSerializer implements DomainVisitor {
     public void visitTextItem(TextItem textItem) {
         try {
             writeIndentation();
-            writer.write("<text>" + textItem.getText() + "</text>\n");
+            writer.write("<text");
+            for (Style style : textItem.getStyles()){
+                style.accept(xmlStyleSerializer);
+            }
+            writer.write(">" + textItem.getText() + "</text>\n");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -76,7 +82,9 @@ public class XMLSerializer implements DomainVisitor {
     public void visitImageItem(ImageItem imageItem) {
         try {
             writeIndentation();
-            writer.write("<image src=\"" + imageItem.getSrc() + "\"/>\n");
+            String imgString = String.format("<image src=\"%s\" width=\"%s\" height=\"%s\" />\n",
+                    imageItem.getSrc(), imageItem.getWidth(), imageItem.getHeight());
+            writer.write(imgString);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -87,7 +95,11 @@ public class XMLSerializer implements DomainVisitor {
     public void visitListItem(List list) {
         try {
             writeIndentation();
-            writer.write("<list>\n");
+            writer.write("<list");
+            for (Style style : list.getStyles()){
+                style.accept(xmlStyleSerializer);
+            }
+            writer.write(">\n");
             indent++;
             for (Iterator iter = list.createIterator(); !iter.isDone(); iter.next()) {
                 iter.current().accept(this);

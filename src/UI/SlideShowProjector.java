@@ -15,7 +15,7 @@ import java.awt.*;
 public class SlideShowProjector extends Projector{
 
     private static final int TOP_OFFSET = 50;
-    private static final Font defaultFont = new Font("Arial", Font.PLAIN, 20);
+    private static final Font defaultFont = new Font("Arial", Font.ITALIC|Font.BOLD, 20);
     private final DomainServicesFacade services;
 
     public SlideShowProjector(String title, int screenWidth, int screenHeight){

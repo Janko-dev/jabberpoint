@@ -20,6 +20,10 @@ public abstract class SlideShowComponent {
         return styles.set(index, style);
     }
 
+    public void removeStyle(Style style){
+        styles.remove(style);
+    }
+
     public ArrayList<Style> getStyles(){
         return styles;
     }

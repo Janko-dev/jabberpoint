@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE slideshow[
+<!--SLIDESHOW AND META DATA-->
         <!ELEMENT slideshow (title, author, date, slide+)>
         <!ELEMENT title (#PCDATA)>
         <!ELEMENT author (#PCDATA)>
         <!ELEMENT date (#PCDATA)>
-
+<!--SLIDE-->
         <!ELEMENT slide (text|image|list|table)*>
         <!ATTLIST slide background CDATA #IMPLIED>
-
+<!--TEXT ITEM-->
         <!ELEMENT text (#PCDATA)>
         <!ATTLIST text color CDATA #IMPLIED>
         <!ATTLIST text font CDATA #IMPLIED>
         <!ATTLIST text size CDATA #IMPLIED>
-
+<!--IMAGE ITEM-->
         <!ELEMENT image EMPTY>
         <!ATTLIST image src CDATA #REQUIRED>
         <!ATTLIST image width CDATA #REQUIRED>
         <!ATTLIST image height CDATA #REQUIRED>
-
+<!--LIST ITEM-->
         <!ELEMENT list (text|image|list|table)*>
         <!ATTLIST list bullet_point CDATA #IMPLIED>
-
+<!--TABLE ITEM-->
         <!ELEMENT table (row)*>
         <!ELEMENT row (text|image|list|table)*>
         <!ATTLIST table rows CDATA #REQUIRED>
