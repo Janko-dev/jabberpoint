@@ -12,10 +12,6 @@ public class Slide extends SlideShowComposite{
         this.components = new ArrayList<>();
     }
 
-    @Override
-    public Iterator createIterator() {
-        return new SlideShowIterator(components);
-    }
 
     @Override
     public void accept(DomainVisitor v) {

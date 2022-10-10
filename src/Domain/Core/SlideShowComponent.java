@@ -16,9 +16,6 @@ public abstract class SlideShowComponent {
     public Style getStyle(int index){
         return styles.get(index);
     }
-    public Style setStyle(int index, Style style){
-        return styles.set(index, style);
-    }
 
     public void removeStyle(Style style){
         styles.remove(style);

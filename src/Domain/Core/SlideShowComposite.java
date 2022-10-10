@@ -1,6 +1,8 @@
 package Domain.Core;
 
 import Domain.Core.Iterator.Iterable;
+import Domain.Core.Iterator.Iterator;
+import Domain.Core.Iterator.SlideShowIterator;
 
 import java.util.ArrayList;
 
@@ -14,6 +16,11 @@ public abstract class SlideShowComposite extends SlideShowComponent implements I
 
     public SlideShowComponent getComponent(int index){
         return this.components.get(index);
+    }
+
+    @Override
+    public Iterator createIterator() {
+        return new SlideShowIterator(this.components);
     }
 
     public int getLength(){

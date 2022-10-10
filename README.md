@@ -170,6 +170,8 @@ Another entity that was considered, but ultimately removed from the ubiquitous l
 
 It is considered to add an abstract Accessor class as parent of Reader and Writer. That way shared Reader/Writer method could be added to the Accessor instead of adding the FileUtils class. This would make the implementation of DomainDirector more complicated as now the DomainDirector can have different reader/writer protocols at the same time. Otherwise, it would be slightly harder to differentiate between a reader Accessor and a writer Accessor.
 
+The image item class has a BufferedImage object to store the raw image data. This leads to strong coupling with java.awt.image package. We acknowledge the strong coupling as we made this decision consciously. The reason being that the other alternative was to lazily load the image during the rendering of the slide. This would not behave like other presentation programs. Optionally another alternative is to use another way to obtain the raw image data, and thereafter store it in a native data structure (i.e., an array).
+
 ## Design of the creation of objects (and reading
 and writing)
 

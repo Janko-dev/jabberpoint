@@ -41,11 +41,6 @@ public class SlideShow extends SlideShowComposite{
     }
 
     @Override
-    public Iterator createIterator() {
-        return new SlideShowIterator(components);
-    }
-
-    @Override
     public void accept(DomainVisitor v) {
         v.visitSlideShow(this);
     }

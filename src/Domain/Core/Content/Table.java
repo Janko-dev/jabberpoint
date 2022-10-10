@@ -24,10 +24,6 @@ public class Table extends SlideShowComposite {
         this.rows = rows;
         this.components = new ArrayList<>();
     }
-    @Override
-    public Iterator createIterator() {
-        return new SlideShowIterator(this.components);
-    }
 
     @Override
     public void accept(DomainVisitor v) {
