@@ -1,15 +1,22 @@
 package Domain.Core.Content;
 
 import Domain.Core.SlideItem;
-
-import java.util.Iterator;
+import Domain.Services.Visitors.DomainVisitor;
 
 public class TextItem extends SlideItem {
 
-    public String text;
+    private String text;
+
+    public String getText() {
+        return text;
+    }
+
+    public TextItem(String text) {
+        this.text = text;
+    }
 
     @Override
-    public Iterator iterator() {
-        return null;
+    public void accept(DomainVisitor v) {
+        v.visitTextItem(this);
     }
 }

@@ -7,12 +7,23 @@ import Domain.Services.Visitors.DomainVisitor;
 
 import java.util.ArrayList;
 
-public class List extends SlideShowComposite {
+public class Table extends SlideShowComposite {
 
-    public List(){
-        this.components = new ArrayList<>();
+    private int rows, cols;
+
+    public int getRows() {
+        return rows;
     }
 
+    public int getCols() {
+        return cols;
+    }
+
+    public Table(int rows, int cols){
+        this.cols = cols;
+        this.rows = rows;
+        this.components = new ArrayList<>();
+    }
     @Override
     public Iterator createIterator() {
         return new SlideShowIterator(this.components);
@@ -20,6 +31,6 @@ public class List extends SlideShowComposite {
 
     @Override
     public void accept(DomainVisitor v) {
-        v.visitListItem(this);
+        v.visitTableItem(this);
     }
 }

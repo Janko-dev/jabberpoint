@@ -1,13 +1,32 @@
 package Domain.Core;
 
 import Domain.Core.Style.Style;
+import Domain.Services.Visitors.DomainVisitor;
 
-import java.awt.*;
 import java.util.ArrayList;
 
-public abstract class SlideShowComponent implements Iterable {
+public abstract class SlideShowComponent {
 
-    public Point position;
-    public int depth;
-    public ArrayList<Style> styles;
+    private ArrayList<Style> styles = new ArrayList<>();
+
+    public void addStyle(Style style){
+        styles.add(style);
+    }
+
+    public Style getStyle(int index){
+        return styles.get(index);
+    }
+    public Style setStyle(int index, Style style){
+        return styles.set(index, style);
+    }
+
+    public void removeStyle(Style style){
+        styles.remove(style);
+    }
+
+    public ArrayList<Style> getStyles(){
+        return styles;
+    }
+
+    public abstract void accept(DomainVisitor v);
 }

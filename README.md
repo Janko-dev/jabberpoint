@@ -73,17 +73,107 @@ _Table 5 - Details of the **change slide action**._
 The details of the actions can optionally depict associated rules that, in the case of action rules, determine when an action may take place, and strategies, that determine how an action should be performed. 
 
 #### State projector rule
-This rule is a *constraint* rule for the **start slide show action**. It specifies that there should be a valid projector that can use the slide show to interface the content of the slides to both the presentor and the viewers.
+This rule is a *constraint* rule for the **start slide show action**. It specifies that there should be a valid projector that can use the slide show to interface the content of the slides to both the presenter and the viewers.
 
 #### Slide show navigation rule
 this rule is a *strategy* rule for the **change slide action**. It specifies that the navigation through the slide show should be from the first slide to the last slide in a linear way. To be able to navigate to a next or previous slide, there should be a valid slide available that corresponds to the requested action.
 
+## Design of the domain
+
+### Entity responsibilities 
+The responsibilities of the entities define what the entity knows and what it can do.
+
+#### Slideshow
+
+| Type | Responsibility              | Comments                                            |
+|------|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | slides                      | collection of slides                                |
+|      | meta information            | title, author, date                                 |
+| Can  |                             |                                                     |
+|      | navigation trough slides    |                                                     |
+
+#### Slide
+
+| Type | Responsibility              | Comments                                            |
+|------|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | items                       | collection of items                                 |
+|      |                             |                                                     |
+| Can  |                             |                                                     |
+|      | navigation trough items     |                                                     |
+
+#### Item
+
+| Type | Responsibility              | Comments                                            |
+|------|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | depth                       | structuring depth                                   |
+|      | styles                      | collection of styles e.g. color or size             |
+|      | items                       | only in case of composite items like list and table |
+| Can  |                             |                                                     |
+|      |                             |                                                     |
+
+#### Style
+
+| Type | Responsibility              | Comments                                            |
+|------|-----------------------------|-----------------------------------------------------|
+| Know |                             |                                                     |
+|      | style type                  | e.g. color or font                                  |
+|      |                             |                                                     |
+| Can  |                             |                                                     |
+|      | return style information    |                                                     |
+
+### Mapping domain to patterns
+
+#### Composite
+
+| Class              | Role in the pattern | Comments                                      |
+|--------------------|---------------------|-----------------------------------------------|
+| SlideShowComponent | Component           | abstract class                                |
+| SlideShowComposite | Composite           | abstract class                                |
+| List               | Composite           | concrete class                                |
+| SlideShow          | Composite           | concrete class, only one may exist            |
+| Slide              | Composite           | concrete class                                |
+| SlideItem          | Leaf                | abstract class                                |
+| TextItem           | Leaf                | concrete class                                |
+| ImageItem          | Leaf                | concrete class                                | 
+
+#### Iterator
+
+| Class              | Role in the pattern | Comments                                      |
+|--------------------|---------------------|-----------------------------------------------|
+| Iterator           | Iterator            | interface class                               |
+| SlideShowIterator  | Concrete Iterator   |                                               |
+| SlideIterator      | Concrete Iterator   |                                               |
+| Iterable           | Aggregate           |                                               |
+| SlideShow          | Concrete Aggregate  |                                               |
+| Slide              | Concrete Aggregate  |                                               |
+| List               | Concrete Aggregate  |                                               |
+| Table              | Concrete Aggregate  |                                               |           
+
+
+#### Strategy
+| Class              | Role in the pattern | Comments                                      |
+|--------------------|---------------------|-----------------------------------------------|
+| SlideShowComponent | Composition         |                                               |
+| Style              | Compositor          | interface class                               | 
+| FontStyle          | Concrete Compositor |                                               |
+| ColorStyle         | Concrete Compositor |                                               |
+
 ### Considerations
 There were a couple of deliberations during the composition of the ubiquitous language, that would be beneficial to discuss. 
 
-In the domain of presentation tools, slides used to be projected using a projector. As an entity, a projector did not fit in the ubiquitous language, because it doesn't hold much domain specific value other than displaying the slides to a screen. The projector would act as the user-interface of the program, and should therefore be contained in its own layer in the architecture. 
+In the domain of presentation tools, slides used to be projected using a projector. As an entity, a projector does not fit in the ubiquitous language, because it does not hold much domain specific value other than displaying the slides to a screen. The projector would act as the user-interface of the program, and should therefore be contained in its own layer in the architecture. 
 
-Another entity that was considered, but ultimately removed from the ubiquitous language, is the presenter. The presenter acts as the catalyst to perform navigation actions. However, the presenter is simply the controller of the slideshow, and does not provide domain specific functionality. Therefore, we opted to separate the presenter from the core domain by placing the presenter in a controls layer. 
+Another entity that was considered, but ultimately removed from the ubiquitous language, is the presenter. The presenter acts as the catalyst to perform navigation actions. However, the presenter is simply the controller of the slideshow, and does not provide domain specific functionality. Therefore, we opted to separate the presenter from the core domain by having the controls layer of the architecture behaving like the presenter. 
 
-## Design of the domain
+It is considered to add an abstract Accessor class as parent of Reader and Writer. That way shared Reader/Writer method could be added to the Accessor instead of adding the FileUtils class. This would make the implementation of DomainDirector more complicated as now the DomainDirector can have different reader/writer protocols at the same time. Otherwise, it would be slightly harder to differentiate between a reader Accessor and a writer Accessor.
 
+## Design of the creation of objects (and reading
+and writing)
+
+## Design notes:
+- For the UI, we use a combination of the Command pattern and the Observer pattern. this seems to be overkill. However, in the face of extendibility, one could imagine the observable (i.e., the keyboard controller) to notify not only a slideshow projector, but also many other devices to allow streaming/screen-sharing functionality. In the same vein, commands are initialised in the keyboard controller, with a passed reference to the current projector, then updated by the same projector during an observer notification, and then executed, which delegates command execution back and forth. This also seems like overkill, however, it serves the purpose of extending commands with functionality that is not only linked to the projector, but for instance to the styling of the slide show components (making every character larger for example).
+- A Builder pattern is used to support future slideshow variants like an infographic, which consist of exactly one slide and more interactive slideshows. Instead of creating several make methods to call a specific (future) builder, the design implements a strategy pattern for the Director in order to segregate builders from eachother. This will prevent a large DomainDirector when DomainBuilders are added, as well specific methods can be added to the concrete DomainDirector. 
+- A Bridge pattern between a concrete DomainBuilder and Deserializer is used to support future deserialization protocols. This is preferred over creating concrete protocol builders like XMLSlideShowBuilder because in combination with the Builder pattern this whould result in duplicated code when creating for example a XMLInfographicBuilder. With the bridge pattern both SlideShowBuilder and InfographicBuilder are able to use XMLReader. 
