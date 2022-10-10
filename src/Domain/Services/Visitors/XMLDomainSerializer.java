@@ -7,6 +7,7 @@ import Domain.Core.Content.TextItem;
 import Domain.Core.Iterator.Iterator;
 import Domain.Core.Slide;
 import Domain.Core.SlideShow;
+import Domain.Core.Style.Style;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -44,7 +45,11 @@ public class XMLSerializer implements DomainVisitor {
     @Override
     public void visitSlide(Slide slide) {
         try {
-            writer.write("\t<slide>\n");
+            writer.write("\t<slide");
+            for (Style style : slide.getStyles()){
+                writer.write(style.)
+            }
+            writer.write(">\n");
             indent++;
             for (Iterator iter = slide.createIterator(); !iter.isDone(); iter.next()) {
                 iter.current().accept(this);
