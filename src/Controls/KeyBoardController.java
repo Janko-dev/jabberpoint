@@ -1,6 +1,7 @@
 package Controls;
 
 import Communication.*;
+import Domain.Services.Facade.DomainServices;
 import Domain.Services.Facade.DomainServicesFacade;
 
 import java.awt.event.KeyAdapter;
@@ -10,9 +11,9 @@ import java.util.ArrayList;
 public class KeyBoardController extends KeyAdapter implements Observable {
 
     private ArrayList<Observer> observers;
-    private DomainServicesFacade services;
+    private DomainServices services;
 
-    public KeyBoardController(DomainServicesFacade services){
+    public KeyBoardController(DomainServices services){
         observers = new ArrayList<>();
         this.services = services;
     }

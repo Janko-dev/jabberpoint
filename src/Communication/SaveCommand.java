@@ -11,11 +11,11 @@ public class SaveCommand implements Command {
         put("xml", new XMLWriter());
     }};
 
-    private DomainServices services;
+    private DomainServices receiver;
     private String filePath;
 
     public SaveCommand(DomainServices services, String filePath){
-        this.services = services;
+        this.receiver = services;
         this.filePath = filePath;
     }
     @Override
@@ -23,6 +23,6 @@ public class SaveCommand implements Command {
         String extension = FileUtils.getExtension(filePath);
         Writer writer = formatToWriter.get(extension);
         if (writer == null) return;
-        services.saveSlideShowTo(writer, filePath);
+        receiver.saveSlideShowTo(filePath, writer);
     }
 }

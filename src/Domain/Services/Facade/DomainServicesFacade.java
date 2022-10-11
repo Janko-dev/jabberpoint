@@ -20,7 +20,7 @@ public class DomainServicesFacade implements DomainServices, Observer {
     private Iterator slideShowIterator;
 
     @Override
-    public void createSlideShowFrom(Reader reader, String filePath) {
+    public void createSlideShowFrom(String filePath, Reader reader) {
         SlideShowBuilder builder = new SlideShowBuilder();
         SlideShowDirector director = new SlideShowDirector(builder, reader);
         slideShow = director.make(filePath);
@@ -28,7 +28,7 @@ public class DomainServicesFacade implements DomainServices, Observer {
     }
 
     @Override
-    public void saveSlideShowTo(Writer writer, String filePath) {
+    public void saveSlideShowTo(String filePath, Writer writer) {
         writer.writeToFile(filePath, slideShow);
     }
 
