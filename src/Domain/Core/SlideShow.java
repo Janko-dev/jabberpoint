@@ -37,12 +37,7 @@ public class SlideShow extends SlideShowComposite{
     }
 
     public SlideShow(){
-        this.components = new ArrayList<>();
-    }
-
-    @Override
-    public Iterator createIterator() {
-        return new SlideShowIterator(components);
+        super();
     }
 
     @Override

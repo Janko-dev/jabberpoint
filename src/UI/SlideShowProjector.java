@@ -3,26 +3,22 @@ package UI;
 import Communication.Command;
 import Controls.KeyBoardController;
 import Controls.MenuController;
-import Domain.Core.Iterator.Iterator;
 import Domain.Core.SlideShowComponent;
 import Domain.Services.Facade.DomainServicesFacade;
 import Domain.Services.Visitors.DomainRenderer;
-import Domain.Services.Visitors.StyleRenderer;
+import Domain.Services.Visitors.DomainVisitor;
 import Infrastructure.XMLReader;
 
 import java.awt.*;
 
 public class SlideShowProjector extends Projector{
-
-    private static final int TOP_OFFSET = 50;
-    private static final Font defaultFont = new Font("Arial", Font.ITALIC|Font.BOLD, 20);
     private final DomainServicesFacade services;
 
     public SlideShowProjector(String title, int screenWidth, int screenHeight){
         super(title, screenWidth, screenHeight);
 
         services = new DomainServicesFacade();
-        services.createSlideShowFrom(new XMLReader(), "examples/slideshow_test.xml");
+        services.createSlideShowFrom("examples/slideshow_test.xml", new XMLReader());
 
         initializeScreen();
 
@@ -51,7 +47,7 @@ public class SlideShowProjector extends Projector{
 
         SlideShowComponent current = services.getCurrentSlide();
 
-        DomainRenderer domainRenderer = new DomainRenderer(g, 0, TOP_OFFSET, frame.getBounds());
+        DomainVisitor domainRenderer = new DomainRenderer(g, 0, TOP_OFFSET, frame.getBounds());
         current.accept(domainRenderer);
 
         g.setFont(defaultFont);

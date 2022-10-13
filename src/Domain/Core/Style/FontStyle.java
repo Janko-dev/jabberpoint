@@ -27,6 +27,11 @@ public class FontStyle implements Style{
         this.fontSize = 20;
     }
 
+    public FontStyle(String fontName, int fontSize){
+        this.fontName = fontName;
+        this.fontSize = fontSize;
+    }
+
     @Override
     public void accept(StyleVisitor v) {
         v.visitFontStyle(this);

@@ -13,11 +13,11 @@ public class OpenCommand implements Command{
         put("xml", new XMLReader());
     }};
 
-    private DomainServices services;
+    private DomainServices receiver;
     private String filePath;
 
     public OpenCommand(DomainServices services, String filePath){
-        this.services = services;
+        this.receiver = services;
         this.filePath = filePath;
     }
 
@@ -26,6 +26,6 @@ public class OpenCommand implements Command{
         String extension = FileUtils.getExtension(filePath);
         Reader reader = formatToReader.get(extension);
         if (reader == null) return;
-        services.createSlideShowFrom(reader, filePath);
+        receiver.createSlideShowFrom(filePath, reader);
     }
 }

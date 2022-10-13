@@ -10,12 +10,7 @@ import java.util.ArrayList;
 public class List extends SlideShowComposite {
 
     public List(){
-        this.components = new ArrayList<>();
-    }
-
-    @Override
-    public Iterator createIterator() {
-        return new SlideShowIterator(this.components);
+        super();
     }
 
     @Override

@@ -11,15 +11,10 @@ import java.io.IOException;
 public class ImageItem extends SlideItem {
 
     private String src;
-    private BufferedImage buffer;
     private int width, height;
 
     public String getSrc() {
         return src;
-    }
-
-    public BufferedImage getBuffer() {
-        return buffer;
     }
 
     public int getWidth() {
@@ -34,12 +29,6 @@ public class ImageItem extends SlideItem {
         this.src = src;
         this.width = width;
         this.height = height;
-        try {
-            buffer = ImageIO.read(new File(src));
-            if (buffer == null) buffer = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_GRAY);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

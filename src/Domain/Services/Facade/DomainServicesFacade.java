@@ -5,14 +5,10 @@ import Communication.Observer;
 import Domain.Core.Iterator.Iterator;
 import Domain.Core.SlideShow;
 import Domain.Core.SlideShowComponent;
-import Domain.Core.Style.Style;
 import Domain.Services.Creation.SlideShowBuilder;
 import Domain.Services.Creation.SlideShowDirector;
-import Domain.Services.Visitors.StyleVisitor;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
-
-import java.awt.*;
 
 public class DomainServicesFacade implements DomainServices, Observer {
 
@@ -20,7 +16,7 @@ public class DomainServicesFacade implements DomainServices, Observer {
     private Iterator slideShowIterator;
 
     @Override
-    public void createSlideShowFrom(Reader reader, String filePath) {
+    public void createSlideShowFrom(String filePath, Reader reader) {
         SlideShowBuilder builder = new SlideShowBuilder();
         SlideShowDirector director = new SlideShowDirector(builder, reader);
         slideShow = director.make(filePath);
@@ -28,7 +24,7 @@ public class DomainServicesFacade implements DomainServices, Observer {
     }
 
     @Override
-    public void saveSlideShowTo(Writer writer, String filePath) {
+    public void saveSlideShowTo(String filePath, Writer writer) {
         writer.writeToFile(filePath, slideShow);
     }
 

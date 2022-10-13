@@ -1,26 +1,72 @@
 package Domain.Services.Creation;
 
+import Domain.Core.ConcreteSlide;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
+import Domain.Core.Iterator.Iterator;
 import Domain.Core.Slide;
 import Domain.Core.SlideShowComponent;
 import Domain.Core.Style.*;
+import Domain.Core.TOCSlide;
 import Utils.ErrorUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import sun.reflect.generics.tree.Tree;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.TreeMap;
 
 public class DOMDeserializer implements Deserializer {
 
     private final Document document;
     private final NodeList slides;
+    private TreeMap<Integer, String> subjectMap;
 
     public DOMDeserializer(Document document){
         this.document = document;
         this.slides = document.getElementsByTagName("slide");
+        this.subjectMap = new TreeMap<>();
+        cacheSubjects();
+    }
+
+    private void cacheSubjects(){
+        String prevSubject = "";
+        for (int index = 0, len = getSlidesLength(); index < len; index++) {
+            Node DOMslide = slides.item(index);
+            NamedNodeMap attrs = DOMslide.getAttributes();
+            if (attrs.getNamedItem("subject") != null && !prevSubject.equals(attrs.getNamedItem("subject").getTextContent())) {
+                String subject = attrs.getNamedItem("subject").getTextContent();
+                subjectMap.put(index, subject);
+                prevSubject = subject;
+            }
+        }
+    }
+
+    public TOCSlide convertToTOC(int nodeIndex){
+        TOCSlide tocSlide = new TOCSlide();
+        Map.Entry<Integer, String> foundEntry = subjectMap.ceilingEntry(nodeIndex);
+        List list = new List();
+        TextItem header = new TextItem("Inhoudsopgave");
+        header.addStyle(new FontStyle("Arial", 38));
+        list.getComponents().add(header);
+        for (Map.Entry<Integer, String> entry : subjectMap.entrySet()) {
+            TextItem textItem = new TextItem(String.format("%s %s", entry.getKey() + 1, entry.getValue()));
+            textItem.addStyle(new FontStyle("Arial", 28));
+
+            if (foundEntry != null && foundEntry.equals(entry)) {
+                textItem.addStyle(new ColorStyle(255, 0, 0));
+            }
+            list.getComponents().add(textItem);
+            //tocSlide.getComponents().add(textItem);
+        }
+        tocSlide.getComponents().add(list);
+        return tocSlide;
     }
 
     @Override
@@ -28,8 +74,20 @@ public class DOMDeserializer implements Deserializer {
         Node DOMslide = slides.item(nodeIndex);
         if (DOMslide.getNodeType() != Node.ELEMENT_NODE) return null;
 
-        Slide newSlide = new Slide();
         NamedNodeMap attrs = DOMslide.getAttributes();
+        if (attrs.getNamedItem("type") != null){
+            String type = attrs.getNamedItem("type").getTextContent();
+            if (type.equals("toc")){
+                return convertToTOC(nodeIndex);
+            }
+        }
+
+        ConcreteSlide newSlide = new ConcreteSlide();
+        if (attrs.getNamedItem("subject") != null){
+            String subject = attrs.getNamedItem("subject").getTextContent();
+            newSlide.setSubject(subject);
+        }
+
         if (attrs.getNamedItem("background") != null){
             String bg = attrs.getNamedItem("background").getTextContent();
             newSlide.addStyle(new BackgroundStyle(convertToRGB(bg)));

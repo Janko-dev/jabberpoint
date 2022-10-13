@@ -20,13 +20,9 @@ public class Table extends SlideShowComposite {
     }
 
     public Table(int rows, int cols){
+        super();
         this.cols = cols;
         this.rows = rows;
-        this.components = new ArrayList<>();
-    }
-    @Override
-    public Iterator createIterator() {
-        return new SlideShowIterator(this.components);
     }
 
     @Override

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class SlideShowIterator implements Iterator{
 
-    private ArrayList<SlideShowComponent> slides;
+    private final ArrayList<SlideShowComponent> slides;
     private int index;
 
     public SlideShowIterator(ArrayList<SlideShowComponent> slides){

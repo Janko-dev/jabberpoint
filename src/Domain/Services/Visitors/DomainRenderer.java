@@ -1,16 +1,17 @@
 package Domain.Services.Visitors;
 
+import Domain.Core.*;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
-import Domain.Core.Slide;
-import Domain.Core.SlideShow;
-import Domain.Core.SlideShowComponent;
-import Domain.Core.Style.BulletPointStyle;
 import Domain.Core.Style.Style;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class DomainRenderer implements DomainVisitor {
 
@@ -74,7 +75,21 @@ public class DomainRenderer implements DomainVisitor {
     }
 
     @Override
-    public void visitSlide(Slide slide) {
+    public void visitConcreteSlide(ConcreteSlide slide) {
+        graphics.setColor(Color.LIGHT_GRAY);
+        graphics.fillRect(0, 0, bounds.width, bounds.height);
+        graphics.setColor(Color.BLACK);
+
+        applyStyles(slide);
+        for (int i = 0, len = slide.getLength(); i < len; i++){
+            slide.getComponent(i).accept(this);
+        }
+
+        graphics.drawString(slide.getSubject(), xOffset/3, INDENT);
+    }
+
+    @Override
+    public void visitTOCSlide(TOCSlide slide) {
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.fillRect(0, 0, bounds.width, bounds.height);
         applyStyles(slide);
@@ -95,13 +110,21 @@ public class DomainRenderer implements DomainVisitor {
     @Override
     public void visitImageItem(ImageItem imageItem) {
         applyStyles(imageItem);
-        graphics.drawImage(imageItem.getBuffer(),
-                xOffset + posX,
-                yOffset + posY,
-                imageItem.getWidth(),
-                imageItem.getHeight(),
-                null);
-        posY += imageItem.getHeight();
+        try {
+            BufferedImage buffer = ImageIO.read(new File(imageItem.getSrc()));
+            if (buffer != null) {
+                graphics.drawImage(buffer,
+                    xOffset + posX,
+                    yOffset + posY,
+                    imageItem.getWidth(),
+                    imageItem.getHeight(),
+                    null);
+                posY += imageItem.getHeight();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
@@ -110,7 +133,7 @@ public class DomainRenderer implements DomainVisitor {
         for (int i = 0, len = list.getLength(); i < len; i++){
             int savedPosX = posX;
             for (Style style : list.getStyles()){
-                distributeStyle(list.getComponent(i), style);
+                passDownStyle(list.getComponent(i), style);
             }
             list.getComponent(i).accept(this);
             for (Style style : list.getStyles()){
@@ -121,7 +144,7 @@ public class DomainRenderer implements DomainVisitor {
         posX -= INDENT;
     }
 
-    private void distributeStyle(SlideShowComponent component, Style distributableStyle){
+    private void passDownStyle(SlideShowComponent component, Style distributableStyle){
         int len = component.getStyles().size();
         if (len == 0) component.addStyle(distributableStyle);
         else {
