@@ -1,12 +1,10 @@
 package Domain.Services.Visitors;
 
+import Domain.Core.*;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
-import Domain.Core.Slide;
-import Domain.Core.SlideShow;
-import Domain.Core.SlideShowComponent;
 import Domain.Core.Style.Style;
 
 import javax.imageio.ImageIO;
@@ -77,7 +75,21 @@ public class DomainRenderer implements DomainVisitor {
     }
 
     @Override
-    public void visitSlide(Slide slide) {
+    public void visitConcreteSlide(ConcreteSlide slide) {
+        graphics.setColor(Color.LIGHT_GRAY);
+        graphics.fillRect(0, 0, bounds.width, bounds.height);
+        graphics.setColor(Color.BLACK);
+
+        applyStyles(slide);
+        for (int i = 0, len = slide.getLength(); i < len; i++){
+            slide.getComponent(i).accept(this);
+        }
+
+        graphics.drawString(slide.getSubject(), xOffset/3, INDENT);
+    }
+
+    @Override
+    public void visitTOCSlide(TOCSlide slide) {
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.fillRect(0, 0, bounds.width, bounds.height);
         applyStyles(slide);

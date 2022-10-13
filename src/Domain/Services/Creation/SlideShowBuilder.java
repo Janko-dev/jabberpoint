@@ -1,7 +1,10 @@
 package Domain.Services.Creation;
 
+import Domain.Core.Iterator.Iterator;
 import Domain.Core.Slide;
 import Domain.Core.SlideShow;
+
+import java.util.HashMap;
 
 public class SlideShowBuilder implements DomainBuilder<SlideShow>{
 

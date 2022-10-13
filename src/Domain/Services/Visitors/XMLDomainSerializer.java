@@ -1,5 +1,6 @@
 package Domain.Services.Visitors;
 
+import Domain.Core.ConcreteSlide;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
@@ -8,6 +9,7 @@ import Domain.Core.Iterator.Iterator;
 import Domain.Core.Slide;
 import Domain.Core.SlideShow;
 import Domain.Core.Style.Style;
+import Domain.Core.TOCSlide;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -45,6 +47,16 @@ public class XMLDomainSerializer implements DomainVisitor {
     }
 
     @Override
+    public void visitConcreteSlide(ConcreteSlide slide) {
+
+    }
+
+    @Override
+    public void visitTOCSlide(TOCSlide slide) {
+
+    }
+
+//    @Override
     public void visitSlide(Slide slide) {
         try {
             writer.write("\t<slide");

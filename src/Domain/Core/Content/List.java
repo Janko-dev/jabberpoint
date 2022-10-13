@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class List extends SlideShowComposite {
 
     public List(){
-        this.components = new ArrayList<>();
+        super();
     }
 
     @Override

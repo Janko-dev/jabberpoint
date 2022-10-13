@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE slideshow[
 <!--SLIDESHOW AND META DATA-->
-        <!ELEMENT slideshow (title, author, date, slide+)>
+        <!ELEMENT slideshow (title, author, date, (slide)+)>
         <!ELEMENT title (#PCDATA)>
         <!ELEMENT author (#PCDATA)>
         <!ELEMENT date (#PCDATA)>
 <!--SLIDE-->
         <!ELEMENT slide (text|image|list|table)*>
         <!ATTLIST slide background CDATA #IMPLIED>
+        <!ATTLIST slide type CDATA #IMPLIED>
+        <!ATTLIST slide subject CDATA #IMPLIED>
 <!--TEXT ITEM-->
         <!ELEMENT text (#PCDATA)>
         <!ATTLIST text color CDATA #IMPLIED>
@@ -31,12 +33,19 @@
     <title>My first slide show</title>
     <author>John Doe</author>
     <date>02-10-2022</date>
-    <slide background="20, 80, 66">
+    <slide type="toc"/>
+    <slide subject="jabberpoint" background="20, 80, 66">
         <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
         <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
         <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
     </slide>
-    <slide background="150, 0, 150">
+    <slide subject="jabberpoint" background="120, 80, 66">
+        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
+        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
+        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
+    </slide>
+    <slide type="toc"/>
+    <slide subject="Gewenste verandering" background="150, 0, 150">
         <text size="38" color="255, 255, 0">This is a list</text>
         <list bullet_point="-> ">
             <text color="255, 255, 255"> hello world </text>
@@ -54,7 +63,8 @@
         </list>
         <text size="32" color="255, 0,255"> After the list </text>
     </slide>
-    <slide background="200, 200, 220">
+    <slide type="toc"/>
+    <slide subject="probleemanalyse" background="200, 200, 220">
         <text size="32" color="230, 0, 20">This is a table</text>
         <table rows="3" cols="2">
             <row>
@@ -72,4 +82,15 @@
         </table>
         <text>After the table</text>
     </slide>
+    <slide subject="jabberpoint" background="20, 180, 166">
+        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
+        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
+        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
+    </slide>
+    <slide background="20, 80, 66">
+        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
+        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
+        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
+    </slide>
+    <slide type="toc"/>
 </slideshow>

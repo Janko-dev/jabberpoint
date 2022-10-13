@@ -37,7 +37,7 @@ public class SlideShow extends SlideShowComposite{
     }
 
     public SlideShow(){
-        this.components = new ArrayList<>();
+        super();
     }
 
     @Override

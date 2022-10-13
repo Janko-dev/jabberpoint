@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
+      <change afterPath="$PROJECT_DIR$/src/Domain/Core/ConcreteSlide.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Core/TOCSlide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Communication/OpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/OpenCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Communication/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/SaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideShowIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideShowIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/slideshow_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/slideshow_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShowComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShowComposite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShowComposite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/FontStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/FontStyle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServicesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServicesFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Projector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Projector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>

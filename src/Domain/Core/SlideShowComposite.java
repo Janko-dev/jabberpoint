@@ -18,6 +18,10 @@ public abstract class SlideShowComposite extends SlideShowComponent implements I
         return this.components.get(index);
     }
 
+    public SlideShowComposite(){
+        this.components = new ArrayList<>();
+    }
+
     @Override
     public Iterator createIterator() {
         return new SlideShowIterator(this.components);

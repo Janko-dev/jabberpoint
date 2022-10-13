@@ -26,4 +26,5 @@ public abstract class SlideShowComponent {
     }
 
     public abstract void accept(DomainVisitor v);
+
 }
