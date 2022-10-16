@@ -27,7 +27,6 @@ public class DomainServicesFacade implements DomainServices, Observer {
         SlideShowDirector director = new SlideShowDirector(builder, reader);
         slideShow = director.make(filePath);
         slideShowIterator = slideShow.createIterator();
-        System.out.println(slideShow);
     }
 
     @Override

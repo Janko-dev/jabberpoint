@@ -22,16 +22,16 @@ public class DOMDeserializer implements Deserializer {
 
     private final Document document;
     private final NodeList slides;
-    private TreeMap<Integer, String> subjectMap;
+    private TreeMap<Integer, String> subjectMap = null;
 
     public DOMDeserializer(Document document){
         this.document = document;
         this.slides = document.getElementsByTagName("slide");
-        this.subjectMap = new TreeMap<>();
-        cacheSubjects();
     }
 
     private void cacheSubjects(){
+        if (subjectMap != null) return;
+        subjectMap = new TreeMap<>();
         String prevSubject = "";
         for (int index = 0, len = getSlidesLength(); index < len; index++) {
             Node DOMslide = slides.item(index);
@@ -45,6 +45,7 @@ public class DOMDeserializer implements Deserializer {
     }
 
     public TOCSlide convertToTOC(int nodeIndex){
+        cacheSubjects();
         TOCSlide tocSlide = new TOCSlide();
         Map.Entry<Integer, String> foundEntry = subjectMap.ceilingEntry(nodeIndex);
         List list = new List();
