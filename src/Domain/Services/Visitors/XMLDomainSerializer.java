@@ -6,7 +6,6 @@ import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
 import Domain.Core.Iterator.Iterator;
-import Domain.Core.Slide;
 import Domain.Core.SlideShow;
 import Domain.Core.Style.Style;
 import Domain.Core.TOCSlide;
@@ -48,16 +47,6 @@ public class XMLDomainSerializer implements DomainVisitor {
 
     @Override
     public void visitConcreteSlide(ConcreteSlide slide) {
-
-    }
-
-    @Override
-    public void visitTOCSlide(TOCSlide slide) {
-
-    }
-
-//    @Override
-    public void visitSlide(Slide slide) {
         try {
             writer.write("\t<slide");
             for (Style style : slide.getStyles()){
@@ -70,6 +59,15 @@ public class XMLDomainSerializer implements DomainVisitor {
             }
             indent--;
             writer.write("\t</slide>\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void visitTOCSlide(TOCSlide slide) {
+        try {
+            writer.write("\t<slide type=\"toc\"/>\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

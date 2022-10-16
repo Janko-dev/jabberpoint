@@ -14,13 +14,15 @@ public class XMLWriter extends Writer{
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
             "<!DOCTYPE slideshow[\n" +
             "<!--SLIDESHOW AND META DATA-->\n" +
-            "        <!ELEMENT slideshow (title, author, date, slide+)>\n" +
+            "        <!ELEMENT slideshow (title, author, date, (slide)+)>\n" +
             "        <!ELEMENT title (#PCDATA)>\n" +
             "        <!ELEMENT author (#PCDATA)>\n" +
             "        <!ELEMENT date (#PCDATA)>\n" +
             "<!--SLIDE-->\n" +
             "        <!ELEMENT slide (text|image|list|table)*>\n" +
             "        <!ATTLIST slide background CDATA #IMPLIED>\n" +
+            "        <!ATTLIST slide type CDATA #IMPLIED>\n" +
+            "        <!ATTLIST slide subject CDATA #IMPLIED>\n" +
             "<!--TEXT ITEM-->\n" +
             "        <!ELEMENT text (#PCDATA)>\n" +
             "        <!ATTLIST text color CDATA #IMPLIED>\n" +
