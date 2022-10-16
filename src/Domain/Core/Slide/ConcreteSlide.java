@@ -1,4 +1,4 @@
-package Domain.Core;
+package Domain.Core.Slide;
 
 import Domain.Services.Visitors.DomainVisitor;
 
@@ -15,9 +15,9 @@ public class ConcreteSlide extends Slide{
         this.subject = subject;
     }
 
-    public ConcreteSlide(){
+    public ConcreteSlide(int index){
         super();
-        subject = "";
+        subject = "Slide " + (index+1);
     }
 
     @Override

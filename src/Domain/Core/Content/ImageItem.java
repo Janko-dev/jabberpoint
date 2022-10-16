@@ -1,12 +1,6 @@
 package Domain.Core.Content;
 
-import Domain.Core.SlideItem;
 import Domain.Services.Visitors.DomainVisitor;
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class ImageItem extends SlideItem {
 

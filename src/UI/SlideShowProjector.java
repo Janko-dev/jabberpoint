@@ -17,16 +17,19 @@ public class SlideShowProjector extends Projector{
     public SlideShowProjector(String title, int screenWidth, int screenHeight){
         super(title, screenWidth, screenHeight);
 
+        // create and bind domain services
         services = new DomainServicesFacade();
-        services.createSlideShowFrom("examples/slideshow_test.xml", new XMLReader());
 
+        // initialize JFrame to predefined settings
         initializeScreen();
 
+        // keyboard controller observable setup
         KeyBoardController keyInput = new KeyBoardController(services);
         keyInput.addObserver(this);
         keyInput.addObserver(services);
         this.addKeyListener(keyInput);
 
+        // menu controller observable setup
         MenuController menuController = new MenuController(services);
         menuController.addObserver(this);
         menuController.addObserver(services);
@@ -44,20 +47,24 @@ public class SlideShowProjector extends Projector{
     }
 
     public void paint(Graphics g){
-
+        // get current slide
         SlideShowComponent current = services.getCurrentSlide();
 
-        DomainVisitor domainRenderer = new DomainRenderer(g, 0, TOP_OFFSET, frame.getBounds());
+        // visit and render slide items
+        DomainVisitor domainRenderer = new DomainRenderer(g, 0, TOP_OFFSET, frame.getBounds(), defaultFont);
         current.accept(domainRenderer);
 
+        // reset font to default
         g.setFont(defaultFont);
         g.setColor(Color.BLACK);
 
+        // draw slide meta information
         String slideCount = services.getSlideCount();
         int textOffsetX = frame.getWidth() - (defaultFont.getSize() * slideCount.length());
         g.drawString(slideCount, textOffsetX, TOP_OFFSET/2);
         g.drawString(services.getMetaString(), TOP_OFFSET, TOP_OFFSET/2);
 
+        // dispose graphics object and its context
         g.dispose();
     }
 

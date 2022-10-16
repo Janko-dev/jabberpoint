@@ -5,6 +5,8 @@ import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
+import Domain.Core.Slide.ConcreteSlide;
+import Domain.Core.Slide.TOCSlide;
 import Domain.Core.Style.Style;
 
 import javax.imageio.ImageIO;
@@ -20,6 +22,7 @@ public class DomainRenderer implements DomainVisitor {
     private final Rectangle bounds;
     private int posX = 0, posY = 0;
     private final int xOffset, yOffset;
+    private final Font defaultFont;
 
     public Graphics getGraphics() {
         return graphics;
@@ -53,11 +56,12 @@ public class DomainRenderer implements DomainVisitor {
         this.posY = posY;
     }
 
-    public DomainRenderer(Graphics graphics, int xOffset, int yOffset, Rectangle bounds){
+    public DomainRenderer(Graphics graphics, int xOffset, int yOffset, Rectangle bounds, Font defaultFont){
         this.graphics = graphics;
         this.xOffset = xOffset;
         this.yOffset = yOffset;
         this.bounds = bounds;
+        this.defaultFont = defaultFont;
     }
 
     private void applyStyles(SlideShowComponent component){
@@ -71,7 +75,7 @@ public class DomainRenderer implements DomainVisitor {
     public void visitSlideShow(SlideShow slideShow) {
         // Cannot render entire slideshow at once.
         // Possible consideration when the slideshow should navigate automatically based on
-        // predefined traversal.
+        // predefined traversal. Hence, why the option is made available.
     }
 
     @Override
@@ -85,7 +89,9 @@ public class DomainRenderer implements DomainVisitor {
             slide.getComponent(i).accept(this);
         }
 
-        graphics.drawString(slide.getSubject(), xOffset/3, INDENT);
+        graphics.setFont(defaultFont);
+        graphics.setColor(Color.BLACK);
+        graphics.drawString(slide.getSubject(), yOffset, yOffset/2+defaultFont.getSize());
     }
 
     @Override

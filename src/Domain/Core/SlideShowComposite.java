@@ -14,6 +14,10 @@ public abstract class SlideShowComposite extends SlideShowComponent implements I
         return components;
     }
 
+    public void addComponent(SlideShowComponent component) {
+        components.add(component);
+    }
+
     public SlideShowComponent getComponent(int index){
         return this.components.get(index);
     }

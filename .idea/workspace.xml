@@ -5,9 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
+      <change afterPath="$PROJECT_DIR$/src/Domain/Core/Content/SlideItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Core/Slide/Slide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/ConcreteSlide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide/ConcreteSlide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/TextItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Slide.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShowComposite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShowComposite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/BackgroundStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/BackgroundStyle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/ColorStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/ColorStyle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/TOCSlide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide/TOCSlide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/Deserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/Deserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServicesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServicesFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

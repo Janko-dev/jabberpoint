@@ -1,6 +1,6 @@
 package Domain.Services.Visitors;
 
-import Domain.Core.ConcreteSlide;
+import Domain.Core.Slide.ConcreteSlide;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
@@ -8,7 +8,7 @@ import Domain.Core.Content.TextItem;
 import Domain.Core.Iterator.Iterator;
 import Domain.Core.SlideShow;
 import Domain.Core.Style.Style;
-import Domain.Core.TOCSlide;
+import Domain.Core.Slide.TOCSlide;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

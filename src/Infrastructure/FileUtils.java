@@ -1,13 +1,6 @@
 package Infrastructure;
 
-import java.io.File;
-
 public class FileUtils {
-
-    public static String getExtension(File file) {
-        String filePath = file.toString();
-        return getExtension(filePath);
-    }
 
     public static String getExtension(String filePath) {
         int indexOfDot = filePath.lastIndexOf('.');

@@ -1,6 +1,7 @@
 package Domain.Core.Style;
 
 import Domain.Services.Visitors.StyleVisitor;
+import Utils.ErrorUtils;
 
 public class BackgroundStyle implements Style{
 
@@ -25,6 +26,8 @@ public class BackgroundStyle implements Style{
     }
 
     public BackgroundStyle(int[] colorParts) {
+        ErrorUtils.assertEquals(colorParts.length == 3,
+                "Array of colors must have a length of exactly 3");
         this.red = colorParts[0];
         this.green = colorParts[1];
         this.blue = colorParts[2];

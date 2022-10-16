@@ -1,6 +1,6 @@
 package Domain.Services.Creation;
 
-import Domain.Core.Slide;
+import Domain.Core.Slide.Slide;
 
 public interface Deserializer {
     public Slide convertToSlide(int nodeIndex);

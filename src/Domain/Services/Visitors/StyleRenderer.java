@@ -5,7 +5,6 @@ import Domain.Core.Style.BulletPointStyle;
 import Domain.Core.Style.ColorStyle;
 import Domain.Core.Style.FontStyle;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class StyleRenderer implements StyleVisitor{

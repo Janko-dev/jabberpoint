@@ -9,11 +9,17 @@ import Domain.Services.Creation.SlideShowBuilder;
 import Domain.Services.Creation.SlideShowDirector;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
+import Infrastructure.XMLReader;
 
 public class DomainServicesFacade implements DomainServices, Observer {
 
     private SlideShow slideShow;
     private Iterator slideShowIterator;
+    private final String demoPath = "examples/slideshow_test.xml";
+
+    public DomainServicesFacade(){
+        createSlideShowFrom(demoPath, new XMLReader());
+    }
 
     @Override
     public void createSlideShowFrom(String filePath, Reader reader) {
@@ -21,6 +27,7 @@ public class DomainServicesFacade implements DomainServices, Observer {
         SlideShowDirector director = new SlideShowDirector(builder, reader);
         slideShow = director.make(filePath);
         slideShowIterator = slideShow.createIterator();
+        System.out.println(slideShow);
     }
 
     @Override

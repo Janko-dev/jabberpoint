@@ -1,10 +1,7 @@
 package Domain.Services.Creation;
 
-import Domain.Core.Iterator.Iterator;
-import Domain.Core.Slide;
+import Domain.Core.Slide.Slide;
 import Domain.Core.SlideShow;
-
-import java.util.HashMap;
 
 public class SlideShowBuilder implements DomainBuilder<SlideShow>{
 
@@ -45,7 +42,7 @@ public class SlideShowBuilder implements DomainBuilder<SlideShow>{
         for (int index = 0, len = converter.getSlidesLength(); index < len; index++){
             Slide newSlide = converter.convertToSlide(index);
             if (newSlide == null) return;
-            this.slideShow.getComponents().add(newSlide);
+            this.slideShow.addComponent(newSlide);
         }
     }
 

@@ -2,7 +2,6 @@ package Controls;
 
 import Communication.*;
 import Domain.Services.Facade.DomainServices;
-import Domain.Services.Facade.DomainServicesFacade;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

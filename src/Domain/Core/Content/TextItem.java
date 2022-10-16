@@ -1,6 +1,5 @@
 package Domain.Core.Content;
 
-import Domain.Core.SlideItem;
 import Domain.Services.Visitors.DomainVisitor;
 
 public class TextItem extends SlideItem {

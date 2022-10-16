@@ -3,7 +3,6 @@ package Infrastructure;
 import Domain.Core.SlideShow;
 
 import java.io.File;
-import java.io.IOException;
 
 public abstract class Writer {
 

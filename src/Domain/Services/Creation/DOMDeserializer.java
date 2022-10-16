@@ -1,25 +1,21 @@
 package Domain.Services.Creation;
 
-import Domain.Core.ConcreteSlide;
+import Domain.Core.Slide.ConcreteSlide;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
-import Domain.Core.Iterator.Iterator;
-import Domain.Core.Slide;
+import Domain.Core.Slide.Slide;
 import Domain.Core.SlideShowComponent;
 import Domain.Core.Style.*;
-import Domain.Core.TOCSlide;
+import Domain.Core.Slide.TOCSlide;
 import Utils.ErrorUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import sun.reflect.generics.tree.Tree;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 
 public class DOMDeserializer implements Deserializer {
@@ -54,7 +50,7 @@ public class DOMDeserializer implements Deserializer {
         List list = new List();
         TextItem header = new TextItem("Inhoudsopgave");
         header.addStyle(new FontStyle("Arial", 38));
-        list.getComponents().add(header);
+        list.addComponent(header);
         for (Map.Entry<Integer, String> entry : subjectMap.entrySet()) {
             TextItem textItem = new TextItem(String.format("%s %s", entry.getKey() + 1, entry.getValue()));
             textItem.addStyle(new FontStyle("Arial", 28));
@@ -62,10 +58,9 @@ public class DOMDeserializer implements Deserializer {
             if (foundEntry != null && foundEntry.equals(entry)) {
                 textItem.addStyle(new ColorStyle(255, 0, 0));
             }
-            list.getComponents().add(textItem);
-            //tocSlide.getComponents().add(textItem);
+            list.addComponent(textItem);
         }
-        tocSlide.getComponents().add(list);
+        tocSlide.addComponent(list);
         return tocSlide;
     }
 
@@ -82,7 +77,7 @@ public class DOMDeserializer implements Deserializer {
             }
         }
 
-        ConcreteSlide newSlide = new ConcreteSlide();
+        ConcreteSlide newSlide = new ConcreteSlide(nodeIndex);
         if (attrs.getNamedItem("subject") != null){
             String subject = attrs.getNamedItem("subject").getTextContent();
             newSlide.setSubject(subject);
@@ -97,7 +92,7 @@ public class DOMDeserializer implements Deserializer {
         for (int i = 0, len = items.getLength(); i < len; i++){
             Node current = items.item(i);
             if (current.getNodeType() != Node.ELEMENT_NODE) continue;
-            newSlide.getComponents().add(convertToItem(current));
+            newSlide.addComponent(convertToItem(current));
         }
         return newSlide;
     }
@@ -188,7 +183,7 @@ public class DOMDeserializer implements Deserializer {
             NodeList colNodes = rowNodes.item(i).getChildNodes();
             for (int j = 0, colLen = colNodes.getLength(); j < colLen; j++){
                 if (colNodes.item(j).getNodeType() != Node.ELEMENT_NODE) continue;
-                tableComposite.getComponents().add(convertToItem(colNodes.item(j)));
+                tableComposite.addComponent(convertToItem(colNodes.item(j)));
             }
         }
         ErrorUtils.assertEquals(tableComposite.getComponents().size() == rows*cols,
@@ -208,7 +203,7 @@ public class DOMDeserializer implements Deserializer {
         for (int i = 0, len = children.getLength(); i < len; i++) {
             if (children.item(i).getNodeType() != Node.ELEMENT_NODE) continue;
             SlideShowComponent component = convertToItem(children.item(i));
-            listComposite.getComponents().add(component);
+            listComposite.addComponent(component);
         }
         return listComposite;
     }

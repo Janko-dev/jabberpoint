@@ -1,4 +1,4 @@
-package Domain.Core;
+package Domain.Core.Slide;
 
 import Domain.Services.Visitors.DomainVisitor;
 
