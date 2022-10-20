@@ -5,7 +5,7 @@ import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
 import Domain.Core.Content.TextItem;
-import Domain.Core.Slide.ConcreteSlide;
+import Domain.Core.Slide.RegularSlide;
 import Domain.Core.Slide.TOCSlide;
 import Domain.Core.Style.Style;
 
@@ -79,7 +79,7 @@ public class DomainRenderer implements DomainVisitor {
     }
 
     @Override
-    public void visitConcreteSlide(ConcreteSlide slide) {
+    public void visitConcreteSlide(RegularSlide slide) {
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.fillRect(0, 0, bounds.width, bounds.height);
         graphics.setColor(Color.BLACK);

@@ -2,7 +2,7 @@ package Domain.Core.Slide;
 
 import Domain.Services.Visitors.DomainVisitor;
 
-public class ConcreteSlide extends Slide{
+public class RegularSlide extends Slide{
 
     private String subject;
 
@@ -15,7 +15,7 @@ public class ConcreteSlide extends Slide{
         this.subject = subject;
     }
 
-    public ConcreteSlide(int index){
+    public RegularSlide(int index){
         super();
         subject = "Slide " + (index+1);
     }

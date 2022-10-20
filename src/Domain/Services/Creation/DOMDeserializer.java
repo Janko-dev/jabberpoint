@@ -1,6 +1,6 @@
 package Domain.Services.Creation;
 
-import Domain.Core.Slide.ConcreteSlide;
+import Domain.Core.Slide.RegularSlide;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
@@ -78,7 +78,7 @@ public class DOMDeserializer implements Deserializer {
             }
         }
 
-        ConcreteSlide newSlide = new ConcreteSlide(nodeIndex);
+        RegularSlide newSlide = new RegularSlide(nodeIndex);
         if (attrs.getNamedItem("subject") != null){
             String subject = attrs.getNamedItem("subject").getTextContent();
             newSlide.setSubject(subject);

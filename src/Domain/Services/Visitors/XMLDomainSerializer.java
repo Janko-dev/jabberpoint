@@ -1,6 +1,6 @@
 package Domain.Services.Visitors;
 
-import Domain.Core.Slide.ConcreteSlide;
+import Domain.Core.Slide.RegularSlide;
 import Domain.Core.Content.ImageItem;
 import Domain.Core.Content.List;
 import Domain.Core.Content.Table;
@@ -46,7 +46,7 @@ public class XMLDomainSerializer implements DomainVisitor {
     }
 
     @Override
-    public void visitConcreteSlide(ConcreteSlide slide) {
+    public void visitConcreteSlide(RegularSlide slide) {
         try {
             writer.write("\t<slide");
             for (Style style : slide.getStyles()){
