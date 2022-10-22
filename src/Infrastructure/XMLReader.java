@@ -11,13 +11,31 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Concrete XML reader class.
+ * Extends abstract base Reader class
+ */
 public class XMLReader extends Reader {
 
+    /**
+     * Calls {@code readFile(File)} method by converting param filePath to {@code java.io.File} object.
+     * @param filePath file path is provided as a String.
+     * @return {@code Deserializer} object
+     */
     @Override
     public Deserializer readFile(String filePath) {
         return readFile(new File(filePath));
     }
 
+    /**
+     * Builds a document builder that parses and generates a document object model of the provided xml file.
+     * Encapsulates the document object in a {@code DOMDeserializer} object which implements {@code Deserializer}, and returns it.
+     * @param file a {@code java.io.File} object is provided.
+     * @return {@code DOMDeserializer} object that encapsulates the parsed xml as a Document object model.
+     * @exception ParserConfigurationException thrown when document builder fails to parse xml file.
+     * @exception IOException thrown when any IO errors occur.
+     * @exception SAXException thrown when any parse errors occur.
+     */
     @Override
     public Deserializer readFile(File file) {
         try {

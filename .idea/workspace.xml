@@ -9,13 +9,216 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/Command.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/ExitCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/NextCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/Observable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/Observer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/OpenCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/PreviousCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/SaveCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/Command.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/ExitCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/NextCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/Observable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/Observer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/OpenCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/PreviousCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/class-use/SaveCommand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Communication/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/KeyBoardController.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/MenuController.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/class-use/KeyBoardController.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/class-use/MenuController.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Controls/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/ImageItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/List.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/SlideItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/Table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/TextItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/class-use/ImageItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/class-use/List.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/class-use/SlideItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/class-use/Table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/class-use/TextItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Content/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/Iterable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/Iterator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/SlideShowIterator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/class-use/Iterable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/class-use/Iterator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/class-use/SlideShowIterator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Iterator/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/RegularSlide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/Slide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/TOCSlide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/class-use/RegularSlide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/class-use/Slide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/class-use/TOCSlide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Slide/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/SlideShow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/SlideShowComponent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/SlideShowComposite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/BackgroundStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/BulletPointStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/ColorStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/FontStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/Style.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/class-use/BackgroundStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/class-use/BulletPointStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/class-use/ColorStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/class-use/FontStyle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/class-use/Style.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/Style/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/class-use/SlideShow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/class-use/SlideShowComponent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/class-use/SlideShowComposite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Core/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/DOMDeserializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/Deserializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/DomainBuilder.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/DomainDirector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/SlideShowBuilder.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/SlideShowDirector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/class-use/DOMDeserializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/class-use/Deserializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/class-use/DomainBuilder.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/class-use/DomainDirector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/class-use/SlideShowBuilder.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/class-use/SlideShowDirector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Creation/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/DomainServices.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/DomainServicesFacade.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/class-use/DomainServices.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/class-use/DomainServicesFacade.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Facade/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/DomainRenderer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/DomainVisitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/StyleRenderer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/StyleVisitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/XMLDomainSerializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/XMLStyleSerializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/class-use/DomainRenderer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/class-use/DomainVisitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/class-use/StyleRenderer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/class-use/StyleVisitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/class-use/XMLDomainSerializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/class-use/XMLStyleSerializer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Domain/Services/Visitors/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/FileUtils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/Reader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/Writer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/XMLReader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/XMLWriter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/class-use/FileUtils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/class-use/Reader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/class-use/Writer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/class-use/XMLReader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/class-use/XMLWriter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Infrastructure/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/Projector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/SlideShowProjector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/class-use/Projector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/class-use/SlideShowProjector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UI/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Utils/ErrorUtils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Utils/class-use/ErrorUtils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Utils/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Utils/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Utils/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Utils/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/class-use/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-21.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-22.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-23.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLStyleSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLStyleSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Projector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Projector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/ErrorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ErrorUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +231,7 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -58,8 +262,14 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "last_opened_file_path": "C:/Users/janba/IdeaProjects/Jabberpoint",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -67,8 +277,14 @@
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint\examples" />
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint\resources" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ImportExportFile.ImageDir.RECENT_KEYS">
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint\README" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Domain.Services.Visitors" />
     </key>
     <key name="ImportExportFile.TargetDir.RECENT_KEYS">
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint" />
@@ -80,8 +296,8 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="Jabberpoint" />
       <method v="2">
         <option name="Make" enabled="true" />

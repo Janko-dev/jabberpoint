@@ -15,11 +15,15 @@ import java.awt.*;
  * Is dependent on the {@code DomainServicesFacade} by which the UI is able to access domain services.
  */
 public class SlideShowProjector extends Projector{
-    private final DomainServicesFacade services;
+
+	private final DomainServicesFacade services;
 
     /**
      * Constructor that is responsible for the initialization of the window through the Projector abstract class,
      * creation of the domain services facade, and controller setups.
+     * @param title String type
+     * @param screenWidth Integer type
+     * @param screenHeight Integer type
      */
     public SlideShowProjector(String title, int screenWidth, int screenHeight){
         super(title, screenWidth, screenHeight);

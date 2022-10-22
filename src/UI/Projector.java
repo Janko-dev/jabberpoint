@@ -33,7 +33,7 @@ public abstract class Projector extends Canvas implements Observer {
      * Initializes the window by instantiating a JFrame with the following predefined configurations.
      * <ul>
      *     <li>Default close operation is set to default operating system application exiting</li>
-     *     <li>Window size is set as minimum with <code>Dimension(screenWidth, screenHeight)</code>, which makes it scalable</li>
+     *     <li>Window size is set as minimum with {@code Dimension(screenWidth, screenHeight)}, which makes it scalable</li>
      *     <li>Window is spawned in the middle of the screen</li>
      *     <li>Window is attempted to focus on</li>
      * </ul>

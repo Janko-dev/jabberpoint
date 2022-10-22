@@ -1,3 +1,5 @@
+package Main;
+
 import UI.SlideShowProjector;
 
 /**
@@ -5,7 +7,7 @@ import UI.SlideShowProjector;
  */
 public class Main {
     /**
-     * Main method
+     * Main.Main method
      * Instantiates the slideshow projector
      * @param args Command-line arguments (are not used in this application)
      */

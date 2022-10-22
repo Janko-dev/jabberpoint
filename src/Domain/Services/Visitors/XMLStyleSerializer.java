@@ -8,14 +8,29 @@ import Domain.Core.Style.FontStyle;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
+/**
+ * Concrete xml serialization class that is responsible for appropriately writing styling data to a file.
+ * This class implements the {@code StyleVisitor}, which means that a method for every kind of style is implemented.
+ */
 public class XMLStyleSerializer implements StyleVisitor{
 
     private BufferedWriter writer;
 
+    /**
+     * Set the current {@code BufferedWriter} object to a given {@code BufferedWriter}.
+     * The contractual methods rely on using a {@code BufferedWriter} object, so this method needs to be called before any of the visit methods is called.
+     * @param writer an instance of the {@code BufferedWriter} class
+     */
     public void setBufferedWriter(BufferedWriter writer){
         this.writer = writer;
     }
 
+    /**
+     * Writes the {@code FontStyle} with a {@code BufferedWriter} to a file.
+     * format of the string that is written is: {@code font="FONT_NAME" size="FONT_SIZE"}
+     * @param fontStyle an instance of FontStyle
+     * @exception IOException thrown when any IO errors occur.
+     */
     @Override
     public void visitFontStyle(FontStyle fontStyle) {
         try {
@@ -26,6 +41,12 @@ public class XMLStyleSerializer implements StyleVisitor{
         }
     }
 
+    /**
+     * Writes the {@code ColorStyle} with a {@code BufferedWriter} to a file.
+     * format of the string that is written is: {@code color="RED, GREEN, BLUE"}
+     * @param colorStyle an instance of ColorStyle
+     * @exception IOException thrown when any IO errors occur.
+     */
     @Override
     public void visitColorStyle(ColorStyle colorStyle) {
         try {
@@ -39,6 +60,12 @@ public class XMLStyleSerializer implements StyleVisitor{
         }
     }
 
+    /**
+     * Writes the {@code BackgroundStyle} with a {@code BufferedWriter} to a file.
+     * format of the string that is written is: {@code background="RED, GREEN, BLUE"}
+     * @param backgroundStyle an instance of BackgroundStyle
+     * @exception IOException thrown when any IO errors occur.
+     */
     @Override
     public void visitBackgroundStyle(BackgroundStyle backgroundStyle) {
         try {
@@ -52,6 +79,12 @@ public class XMLStyleSerializer implements StyleVisitor{
         }
     }
 
+    /**
+     * Writes the {@code BulletPointStyle} with a {@code BufferedWriter} to a file.
+     * format of the string that is written is: {@code bullet_point="SYMBOL"}
+     * @param bulletPointStyle an instance of BulletPointStyle
+     * @exception IOException thrown when any IO errors occur.
+     */
     @Override
     public void visitBulletPointStyle(BulletPointStyle bulletPointStyle) {
         try {

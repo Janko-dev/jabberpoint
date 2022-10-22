@@ -8,6 +8,11 @@ import Domain.Core.Content.TextItem;
 import Domain.Core.SlideShow;
 import Domain.Core.Slide.TOCSlide;
 
+/**
+ * Visitor interface for the set of domain concrete classes.
+ * Guarantees that every leaf of the {@code SlideShowComponent} hierarchy has a delegated method that is visitable.
+ * Used for both the rendering of the domain and for serialization of a slide show.
+ */
 public interface DomainVisitor {
 
     public void visitSlideShow(SlideShow slideShow);
