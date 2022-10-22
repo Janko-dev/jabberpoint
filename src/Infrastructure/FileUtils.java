@@ -1,5 +1,8 @@
 package Infrastructure;
 
+/**
+ *
+ */
 public class FileUtils {
 
     public static String getExtension(String filePath) {
