@@ -1,11 +1,12 @@
 package Domain.Core;
 
-import Domain.Core.Iterator.Iterator;
-import Domain.Core.Iterator.SlideShowIterator;
 import Domain.Services.Visitors.DomainVisitor;
 
-import java.util.ArrayList;
-
+/**
+ * Concrete composite of the slide show.
+ * Defines getters/setters for the properties, i.e., title, author, and date.
+ * Implements the {@code accept(DomainVisitor v)} method to visit the SlideShow.
+ */
 public class SlideShow extends SlideShowComposite{
 
     private String title;
@@ -40,6 +41,11 @@ public class SlideShow extends SlideShowComposite{
         super();
     }
 
+    /**
+     * The accept method that makes this class visitable.
+     * calls the {@code visitSlideShow(SlideShow)} method, passing itself as a parameter.
+     * @param v Injected visitor of type {@code DomainVisitor}
+     */
     @Override
     public void accept(DomainVisitor v) {
         v.visitSlideShow(this);

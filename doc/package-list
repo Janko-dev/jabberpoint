@@ -1,0 +1,14 @@
+
+Communication
+Controls
+Domain.Core
+Domain.Core.Content
+Domain.Core.Iterator
+Domain.Core.Slide
+Domain.Core.Style
+Domain.Services.Creation
+Domain.Services.Facade
+Domain.Services.Visitors
+Infrastructure
+UI
+Utils

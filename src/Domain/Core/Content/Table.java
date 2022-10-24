@@ -1,12 +1,12 @@
 package Domain.Core.Content;
 
-import Domain.Core.Iterator.Iterator;
-import Domain.Core.Iterator.SlideShowIterator;
 import Domain.Core.SlideShowComposite;
 import Domain.Services.Visitors.DomainVisitor;
 
-import java.util.ArrayList;
-
+/**
+ * Concrete composite that holds a list of slide show components.
+ * Defined in two dimensions with a rows and cols.
+ */
 public class Table extends SlideShowComposite {
 
     private int rows, cols;
@@ -25,6 +25,11 @@ public class Table extends SlideShowComposite {
         this.rows = rows;
     }
 
+    /**
+     * The accept method that makes this class visitable.
+     * calls the {@code visitTableItem(Table)} method, passing itself as a parameter.
+     * @param v Injected visitor of type {@code DomainVisitor}
+     */
     @Override
     public void accept(DomainVisitor v) {
         v.visitTableItem(this);

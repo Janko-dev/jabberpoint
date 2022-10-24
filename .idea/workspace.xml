@@ -1,28 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
-      <change afterPath="$PROJECT_DIR$/src/Domain/Core/ConcreteSlide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Core/TOCSlide.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Core/Style/AbstractColorStyle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/slideshow_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/slideshow_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/NextCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/NextCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Observable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/OpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/OpenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/PreviousCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/PreviousCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/ImageItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/SlideItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Content/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Content/TextItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Iterator/Iterable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Iterator/Iterable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Iterator/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Iterator/Iterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideShowIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Iterator/SlideShowIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Slide/RegularSlide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide/RegularSlide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Slide/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Slide/TOCSlide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Slide/TOCSlide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShowComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Core/SlideShowComposite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/SlideShowComposite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/BackgroundStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/BackgroundStyle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/BulletPointStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/BulletPointStyle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/ColorStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/ColorStyle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/FontStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/FontStyle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Core/Style/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Core/Style/Style.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/Deserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/Deserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/DomainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/DomainBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/DomainDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/DomainDirector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/SlideShowDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServicesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Facade/DomainServicesFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/DomainVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/XMLDomainSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/XMLWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Projector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Projector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/ErrorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ErrorUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,11 +68,17 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="jan_dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -60,8 +100,14 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/janba/IdeaProjects/Jabberpoint&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -69,8 +115,14 @@
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint\examples" />
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint\resources" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ImportExportFile.ImageDir.RECENT_KEYS">
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint\README" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Domain.Services.Visitors" />
     </key>
     <key name="ImportExportFile.TargetDir.RECENT_KEYS">
       <recent name="C:\Users\janba\IdeaProjects\Jabberpoint" />
@@ -82,8 +134,8 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="Jabberpoint" />
       <method v="2">
         <option name="Make" enabled="true" />

@@ -2,33 +2,24 @@ package Domain.Core.Style;
 
 import Domain.Services.Visitors.StyleVisitor;
 
-public class ColorStyle implements Style{
-    private int red, green, blue;
-
-    public int getRed() {
-        return red;
-    }
-
-    public int getGreen() {
-        return green;
-    }
-
-    public int getBlue() {
-        return blue;
-    }
+/**
+ * Color style that maintains 3 color components as integers ranging from 0-255
+ */
+public class ColorStyle extends AbstractColorStyle implements Style{
 
     public ColorStyle(int red, int green, int blue) {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
+        super(red, green, blue);
     }
 
     public ColorStyle(int[] colorParts) {
-        this.red = colorParts[0];
-        this.green = colorParts[1];
-        this.blue = colorParts[2];
+        super(colorParts);
     }
 
+    /**
+     * The accept method that makes this class visitable.
+     * calls the {@code visitColorStyle(ColorStyle)} method, passing itself as a parameter.
+     * @param v Injected visitor of type {@code StyleVisitor}
+     */
     @Override
     public void accept(StyleVisitor v) {
         v.visitColorStyle(this);
