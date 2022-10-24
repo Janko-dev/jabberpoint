@@ -51,7 +51,7 @@ public class XMLWriter extends Writer{
             "        <!ATTLIST table cols CDATA #REQUIRED>\n" +
             "        ]>";
 
-    private XMLDomainSerializer xmlDomainSerializer;
+    private final XMLDomainSerializer xmlDomainSerializer;
 
     /**
      * Constructor instantiates a xml domain serializer object that is necessary to traverse the domain and serialize domain data to a xml format file.

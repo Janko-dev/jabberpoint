@@ -15,7 +15,7 @@ import java.io.IOException;
 
 /**
  * Concrete xml serialization class that is responsible for appropriately writing domain data to a file.
- * This class implements the {@code DomainVisitor}, which means that a method for every kind of concrete domain class is implemented.
+ * This class implements the {@code DomainVisitor}, which means that a method for every kind of concrete domain component is implemented.
  */
 public class XMLDomainSerializer implements DomainVisitor {
 
@@ -73,7 +73,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * @exception IOException thrown when any IO errors occur.
      */
     @Override
-    public void visitConcreteSlide(RegularSlide slide) {
+    public void visitRegularSlide(RegularSlide slide) {
         try {
             writer.write("\t<slide");
             for (Style style : slide.getStyles()){

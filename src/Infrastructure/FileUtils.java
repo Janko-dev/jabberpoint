@@ -1,9 +1,24 @@
 package Infrastructure;
 
+import java.util.HashMap;
+
 /**
  * File utilities containing static methods.
  */
 public class FileUtils {
+
+    public static final HashMap<String, Reader> formatToReader = new HashMap<String, Reader>(){{
+        put("xml", new XMLReader());
+    }};
+
+    public static final HashMap<String, Writer> formatToWriter = new HashMap<String, Writer>(){{
+        put("xml", new XMLWriter());
+    }};
+
+    /**
+     * Private constructor guarantees non-instantiability of this class.
+     */
+    private FileUtils(){}
 
     /**
      * Convenience static method for extracting the file extension of a file path

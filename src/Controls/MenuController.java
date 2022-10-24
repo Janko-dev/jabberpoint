@@ -7,11 +7,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Concrete menu controller responsible for managing menu buttons and notifying any interested objects.
+ * This class extends {@code java.awt.MenuBar} and implements {@code Observable}.
+ * The controller is able to send messages in the form of commands by notifying observers based on action events.
+ */
 public class MenuController extends MenuBar implements Observable {
 
+    private static final long serialVersionUID = 2838866946741739447L;
     private ArrayList<Observer> observers;
     private DomainServices services;
 
+    /**
+     * Constructor that constructs all menus and corresponding buttons with specific functionality.
+     * @param services A concrete implementation of the {@code DomainServices} interface.
+     */
     public MenuController(DomainServices services){
         this.services = services;
         observers = new ArrayList<>();
@@ -37,6 +47,11 @@ public class MenuController extends MenuBar implements Observable {
         add(helpMenu);
     }
 
+    /**
+     * Adds an about button to the menu supplied as parameter.
+     * The button, when pressed, shows a dialog box with general information about the application.
+     * @param menu The menu instance of type {@code java.awt.Menu} that will be appended a new menu item.
+     */
     private void addAboutBox(Menu menu) {
         MenuItem menuItem = mkMenuItem("About");
         menuItem.addActionListener(e -> {
@@ -52,6 +67,10 @@ public class MenuController extends MenuBar implements Observable {
         menu.add(menuItem);
     }
 
+    /**
+     * Adds an exit button to the menu supplied as parameter, that when pressed, shuts down the application.
+     * @param menu The menu instance of type {@code java.awt.Menu} that will be appended a new menu item.
+     */
     private void addExitMenuItem(Menu menu) {
         MenuItem menuItem = mkMenuItem("Exit");
         menuItem.addActionListener(e -> {
@@ -60,6 +79,11 @@ public class MenuController extends MenuBar implements Observable {
         menu.add(menuItem);
     }
 
+    /**
+     * Adds a previous slide button to the menu supplied as parameter,
+     * that when pressed, advances the slideshow to the previous slide.
+     * @param menu The menu instance of type {@code java.awt.Menu} that will be appended a new menu item.
+     */
     private void addPreviousViewMenuItem(Menu menu) {
         MenuItem menuItem = mkMenuItem("Previous slide");
         menuItem.addActionListener(e -> {
@@ -68,6 +92,11 @@ public class MenuController extends MenuBar implements Observable {
         menu.add(menuItem);
     }
 
+    /**
+     * Adds a next slide button to the menu supplied as parameter,
+     * that when pressed, advances the slideshow to the next slide.
+     * @param menu The menu instance of type {@code java.awt.Menu} that will be appended a new menu item.
+     */
     private void addNextViewMenuItem(Menu menu) {
         MenuItem menuItem = mkMenuItem("Next slide");
         menuItem.addActionListener(e -> {
@@ -76,7 +105,12 @@ public class MenuController extends MenuBar implements Observable {
         menu.add(menuItem);
     }
 
-
+    /**
+     * Adds an open button to the menu supplied as parameter,
+     * that when pressed, opens a file explorer that lets the used select which file to open.
+     * A new open command is instantiated with the selected file path.
+     * @param menu The menu instance of type {@code java.awt.Menu} that will be appended a new menu item.
+     */
     private void addOpenMenuItem(Menu menu){
         MenuItem menuItem = mkMenuItem("Open");
         menuItem.addActionListener(e -> {
@@ -91,6 +125,12 @@ public class MenuController extends MenuBar implements Observable {
         menu.add(menuItem);
     }
 
+    /**
+     * Adds a save button to the menu supplied as parameter,
+     * that when pressed, opens a file explorer that lets the used save the slideshow at a file path.
+     * A new save command is instantiated with the selected file path.
+     * @param menu The menu instance of type {@code java.awt.Menu} that will be appended a new menu item.
+     */
     private void addSaveMenuItem(Menu menu){
         MenuItem menuItem = mkMenuItem("Save");
         menuItem.addActionListener(e -> {
@@ -106,20 +146,38 @@ public class MenuController extends MenuBar implements Observable {
         menu.add(menuItem);
     }
 
+    /**
+     * Convenient method for creating menu items.
+     * @param name name of the menu item as a String
+     * @return an instance of {@code java.awt.MenuItem}
+     */
     private MenuItem mkMenuItem(String name) {
         return new MenuItem(name, new MenuShortcut(name.charAt(0)));
     }
 
+
+    /**
+     * Method to add an observer to this observable
+     * @param observer A concrete implementation of the {@code Observer} interface.
+     */
     @Override
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
+    /**
+     * Method to remove an observer from this observable
+     * @param observer A concrete implementation of the {@code Observer} interface.
+     */
     @Override
     public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
+    /**
+     * Notify all observers with a provided command by calling the update method.
+     * @param command an instance of {@code Command}
+     */
     @Override
     public void notifyObservers(Command command) {
         for (Observer ob : observers){

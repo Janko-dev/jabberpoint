@@ -16,7 +16,8 @@ import java.awt.*;
  */
 public class SlideShowProjector extends Projector{
 
-	private final DomainServicesFacade services;
+    private static final long serialVersionUID = -2264972400808438221L;
+    private final DomainServicesFacade services;
 
     /**
      * Constructor that is responsible for the initialization of the window through the Projector abstract class,

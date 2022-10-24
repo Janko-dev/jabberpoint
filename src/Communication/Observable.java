@@ -1,5 +1,8 @@
 package Communication;
 
+/**
+ * Interface that allows clients to be observable by observers
+ */
 public interface Observable {
 
     public void addObserver(Observer observer);

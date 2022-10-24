@@ -16,7 +16,7 @@ import Domain.Core.Slide.TOCSlide;
 public interface DomainVisitor {
 
     public void visitSlideShow(SlideShow slideShow);
-    public void visitConcreteSlide(RegularSlide slide);
+    public void visitRegularSlide(RegularSlide slide);
     public void visitTOCSlide(TOCSlide slide);
     public void visitTextItem(TextItem textItem);
     public void visitImageItem(ImageItem imageItem);

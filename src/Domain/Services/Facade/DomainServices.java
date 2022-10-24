@@ -4,6 +4,11 @@ import Domain.Core.SlideShowComponent;
 import Infrastructure.Reader;
 import Infrastructure.Writer;
 
+/**
+ * The contractual interface which exposes domain specific functionality through methods to the outer layers.
+ * The methods in this interface can be considered as the services of the domain, and should be implemented by a facade.
+ * We are aware that this list could be extended with a visitor rendering method. However, this would clutter the concrete facade implementing this interface with Graphics-specific jargon.
+ */
 public interface DomainServices{
 
     public void createSlideShowFrom(String filePath, Reader reader);

@@ -14,6 +14,7 @@ public abstract class Projector extends Canvas implements Observer {
 
     protected static final Font defaultFont = new Font("Arial", Font.ITALIC|Font.BOLD, 20);
     protected static final int TOP_OFFSET = 50;
+    private static final long serialVersionUID = 6412562371149786463L;
     protected String title;
     protected int screenWidth, screenHeight;
     protected JFrame frame;
