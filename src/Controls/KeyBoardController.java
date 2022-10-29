@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * This class extends {@code java.awt.event.KeyAdapter} and implements {@code Observable}.
  * The controller is able to send messages in the form of commands by notifying observers based on key events.
  */
-public class KeyBoardController extends KeyAdapter implements Observable {
+public class KeyBoardController extends KeyAdapter implements Publisher {
 
     private ArrayList<Observer> observers;
     private DomainServices services;

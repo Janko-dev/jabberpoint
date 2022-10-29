@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * This class extends {@code java.awt.MenuBar} and implements {@code Observable}.
  * The controller is able to send messages in the form of commands by notifying observers based on action events.
  */
-public class MenuController extends MenuBar implements Observable {
+public class MenuController extends MenuBar implements Publisher {
 
     private static final long serialVersionUID = 2838866946741739447L;
     private ArrayList<Observer> observers;
