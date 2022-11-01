@@ -10,9 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Communication/class-use/Observable.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Communication/class-use/Observable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Communication/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Publisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Communication/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/Observer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controls/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/MenuController.java" afterDir="false" />
     </list>

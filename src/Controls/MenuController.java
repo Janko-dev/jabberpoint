@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Concrete menu controller responsible for managing menu buttons and notifying any interested objects.
- * This class extends {@code java.awt.MenuBar} and implements {@code Observable}.
+ * This class extends {@code java.awt.MenuBar} and implements {@code Publisher}.
  * The controller is able to send messages in the form of commands by notifying observers based on action events.
  */
 public class MenuController extends MenuBar implements Publisher {

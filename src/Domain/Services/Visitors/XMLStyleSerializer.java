@@ -29,7 +29,7 @@ public class XMLStyleSerializer implements StyleVisitor{
      * Writes the {@code FontStyle} with a {@code BufferedWriter} to a file.
      * format of the string that is written is: {@code font="FONT_NAME" size="FONT_SIZE"}
      * @param fontStyle an instance of FontStyle
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitFontStyle(FontStyle fontStyle) {
@@ -45,7 +45,7 @@ public class XMLStyleSerializer implements StyleVisitor{
      * Writes the {@code ColorStyle} with a {@code BufferedWriter} to a file.
      * format of the string that is written is: {@code color="RED, GREEN, BLUE"}
      * @param colorStyle an instance of ColorStyle
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitColorStyle(ColorStyle colorStyle) {
@@ -64,7 +64,7 @@ public class XMLStyleSerializer implements StyleVisitor{
      * Writes the {@code BackgroundStyle} with a {@code BufferedWriter} to a file.
      * format of the string that is written is: {@code background="RED, GREEN, BLUE"}
      * @param backgroundStyle an instance of BackgroundStyle
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitBackgroundStyle(BackgroundStyle backgroundStyle) {
@@ -83,7 +83,7 @@ public class XMLStyleSerializer implements StyleVisitor{
      * Writes the {@code BulletPointStyle} with a {@code BufferedWriter} to a file.
      * format of the string that is written is: {@code bullet_point="SYMBOL"}
      * @param bulletPointStyle an instance of BulletPointStyle
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitBulletPointStyle(BulletPointStyle bulletPointStyle) {
