@@ -1,7 +1,7 @@
 package Communication;
 
 /**
- * Interface that allows clients to be an observer of observables.
+ * Interface that allows clients to be an observer of publishers.
  */
 public interface Observer {
 

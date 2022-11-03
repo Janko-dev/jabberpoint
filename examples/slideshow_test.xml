@@ -33,64 +33,120 @@
     <title>My first slide show</title>
     <author>John Doe</author>
     <date>02-10-2022</date>
-    <slide type="toc"/>
-    <slide subject="jabberpoint" background="20, 80, 66">
-        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
-        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
-        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
-    </slide>
-    <slide subject="jabberpoint" background="120, 80, 66">
-        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
-        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
-        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
-    </slide>
-    <slide type="toc"/>
-    <slide subject="Gewenste verandering" background="150, 0, 150">
-        <text size="38" color="255, 255, 0">This is a list</text>
-        <list bullet_point="-> ">
-            <text color="255, 255, 255"> hello world </text>
-            <image src="examples/cat.png" width="150" height="150"/>
-            <text color="0, 255, 255"> list-ception </text>
-            <list bullet_point=" - ">
-                <text color="255, 255, 255"> list_item1 </text>
-                <list bullet_point=" + ">
-                    <text color="255, 255, 0">Hello</text>
-                    <text>Goodnight</text>
-                </list>
-                <text color="0, 255, 0"> list_item2 </text>
+    <slide subject="Welcome slide" background="145, 178, 199">
+        <text size="36" color="200, 0, 0">Welcome to the Jabberpoint demo</text>
+        <list bullet_point="- ">
+            <text>This application was made for the Design for Change master course </text>
+            <text>The following slides depict interesting features of Jabberpoint</text>
+            <text color="100, 0, 0">Navigation:</text>
+            <list>
+                <text>Next slide: PgDn, Down-arrow, Right-arrow, Enter, Space</text>
+                <text>Previous slide: PgUp, Up-arrow, Left-arrow</text>
+                <text>Quit slideshow: Q or q</text>
             </list>
-            <text> After the sublist </text>
+            <text color="100, 0, 0">Navigation is also possible through the "view" menu at the top</text>
         </list>
-        <text size="32" color="255, 0,255"> After the list </text>
     </slide>
     <slide type="toc"/>
-    <slide subject="probleemanalyse" background="200, 200, 220">
-        <text size="32" color="230, 0, 20">This is a table</text>
-        <table rows="3" cols="2">
+    <slide subject="Fonts and sizes" background="145, 178, 199">
+        <text size="32"> This text has the default font (Arial) with size 32</text>
+        <text font="Helvetica" size="18"> This text has a Helvetica font with size 18 </text>
+        <text font="DialogInput" size="24"> This text has a DialogInput font with size 24 </text>
+        <text font="Monospaced" size="12"> This text has a Monospaced font with size 12 </text>
+        <text font="SansSerif" size="30"> This text has a SansSerif font with size 30 </text>
+        <text size="50"> This text has size 50 </text>
+    </slide>
+    <slide type="toc"/>
+    <slide subject="Colors" background="111, 41, 91">
+        <text color="255, 255, 255" size="44">The background of this slide is purple</text>
+    </slide>
+    <slide subject="Colors" background="111, 41, 91">
+        <text font="Monospaced" size="32" color="145, 178, 199"> Text can also have a different color like so </text>
+        <text font="SansSerif" size="32" color="245, 148, 99"> or like this color</text>
+        <text font="Serif" size="32" color="45, 248, 230"> or even this color </text>
+    </slide>
+    <slide type="toc"/>
+    <slide subject="Images" background="145, 178, 199">
+        <text size="32" color="200, 0, 0">Images can be used with a provided width and height</text>
+        <text size="16">(behold my cat)</text>
+        <image src="examples/cat.png" width="200" height="200"/>
+        <image src="examples/cat.png" width="700" height="200"/>
+    </slide>
+    <slide type="toc"/>
+    <slide subject="Lists" background="145, 178, 199">
+        <text size="32" color="200, 0, 0">A list contains items</text>
+        <list bullet_point="- ">
+            <text>list item 1</text>
+            <text font="Serif" color="245, 48, 189" size="26">list item 2 with a custom style</text>
+            <text>or consist of other lists (with custom bullet points)</text>
+            <list bullet_point="@">
+                <text>inner list item 1</text>
+                <list bullet_point="(hello)">
+                    <text>inner list item 1</text>
+                    <list bullet_point="#">
+                        <text>inner list item 1</text>
+                        <text>inner list item 2</text>
+                        <list bullet_point="! ">
+                            <text>inner list item 1</text>
+                            <text>inner list item 2</text>
+                        </list>
+                    </list>
+                    <text>inner list item 2</text>
+                </list>
+                <text>inner list item 2</text>
+            </list>
+        </list>
+    </slide>
+    <slide type="toc"/>
+    <slide subject="Tables" background="145, 178, 199">
+        <text size="32" color="200, 0, 0">A table has rows and columns</text>
+        <text size="28">Tables are still limited. Use a single text item in each cell with the same size.</text>
+        <table rows="3" cols="3">
             <row>
-                <text color="0, 255, 0"> row1col1 </text>
-                <text> row1col2 </text>
+                <text>30.623</text>
+                <text color="20, 220, 0">29.782</text>
+                <text>94.213</text>
             </row>
             <row>
-                <text> row2col1 </text>
-                <text color="255, 100, 30"> row2col2 </text>
+                <text>133.348</text>
+                <text>782.123</text>
+                <text>1.34</text>
             </row>
             <row>
-                <text> 100 </text>
-                <text> B </text>
+                <text>923.12334</text>
+                <text>73.234</text>
+                <text>23.923</text>
             </row>
         </table>
-        <text>After the table</text>
+        <text size="28">Here is another table</text>
+        <table rows="2" cols="8">
+            <row>
+                <text>30.623</text>
+                <text>29.782</text>
+                <text>94.213</text>
+                <text>30.623</text>
+                <text>29.782</text>
+                <text>94.213</text>
+                <text>30.623</text>
+                <text>30.623</text>
+            </row>
+            <row>
+                <text>29.782</text>
+                <text>30.623</text>
+                <text color="200, 0, 0">94.213</text>
+                <text>30.623</text>
+                <text>30.623</text>
+                <text>94.213</text>
+                <text>29.782</text>
+                <text>30.623</text>
+            </row>
+        </table>
     </slide>
-    <slide subject="jabberpoint" background="20, 180, 166">
-        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
-        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
-        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
-    </slide>
-    <slide background="20, 80, 66">
-        <text color="255, 0, 0" size="32"> Welcome to the Slideshow </text>
-        <text color="133, 222, 189" font="Helvetica" size="18"> Cyan colored Helvetica text of size 18 </text>
-        <text color="0, 0, 255" size="24"> Green colored text of size 24 </text>
+    <slide type="toc"/>
+    <slide subject="Conclusion" background="145, 178, 199">
+        <text size="28" color="20, 0, 220">This was the Jabberpoint demo</text>
+        <text size="28" color="20, 0, 220">use the open button in the "file" menu to open another slideshow</text>
+        <text size="28" color="20, 0, 220">use the save button in the "file" menu to save the current slideshow</text>
     </slide>
     <slide type="toc"/>
 </slideshow>

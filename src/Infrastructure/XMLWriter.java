@@ -74,7 +74,7 @@ public class XMLWriter extends Writer{
      * Creates a buffered writer with the provided file object, writes the {@code META_DTD} data, and traverses the slideshow using a {@code Visitor}
      * @param file      file as a {@code java.io.File} object
      * @param slideShow the slideshow object
-     * @exception IOException thrown when any IO errors occur during writing.
+     *  IOException thrown when any IO errors occur during writing.
      */
     @Override
     public void writeToFile(File file, SlideShow slideShow) {

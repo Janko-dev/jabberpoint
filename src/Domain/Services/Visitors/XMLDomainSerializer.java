@@ -47,7 +47,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * Writes the {@code SlideShow} with a {@code BufferedWriter} to a file.
      * This method writes the slide show metadata first, i.e., title, author, and data, and then visits each slide with this {@code XMLDomainSerializer}.
      * @param slideShow an instance of SlideShow
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitSlideShow(SlideShow slideShow) {
@@ -70,7 +70,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * This method writes the slide header by iterating through the list of styles and visiting each of them with the {@code XMLStyleSerializer}.
      * Then, each item of the slide is visited with this {@code XMLDomainSerializer}.
      * @param slide an instance of RegularSlide
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitRegularSlide(RegularSlide slide) {
@@ -95,7 +95,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * Writes the {@code TOCSlide} with a {@code BufferedWriter} to a file.
      * Simply writes a slide element with an attribute {@code type="toc"}.
      * @param slide an instance of TOCSlide
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitTOCSlide(TOCSlide slide) {
@@ -111,7 +111,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * This method writes the text header by iterating through the list of styles and visiting each of them with the {@code XMLStyleSerializer}.
      * Thereafter, the text content stored in the text item is written to the {@code BufferedWriter}.
      * @param textItem an instance of TextItem
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitTextItem(TextItem textItem) {
@@ -133,7 +133,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * The image data is written as required xml attributes within an {@code <image>} tag.
      * The format is as follows: {@code src="SOURCE_FILE_PATH" width="PIXEL_WIDTH" height="PIXEL_HEIGHT"}
      * @param imageItem an instance of ImageItem
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitImageItem(ImageItem imageItem) {
@@ -153,7 +153,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * This method writes the list header by iterating through the list of styles and visiting each of them with the {@code XMLStyleSerializer}.
      * Then, each item of the list is visited with this {@code XMLDomainSerializer}.
      * @param list an instance of List
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitListItem(List list) {
@@ -183,7 +183,7 @@ public class XMLDomainSerializer implements DomainVisitor {
      * Then, each item of the table is visited with this {@code XMLDomainSerializer}.
      * Depending on the current iteration with respect to the column size, {@code <row>} and {@code </row>} tags are inserted to format the table in an appropriate way.
      * @param table an instance of Table
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitTableItem(Table table) {

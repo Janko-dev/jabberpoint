@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 /**
  * Concrete keyboard controller responsible for managing keystrokes and notifying any interested objects.
- * This class extends {@code java.awt.event.KeyAdapter} and implements {@code Observable}.
+ * This class extends {@code java.awt.event.KeyAdapter} and implements {@code Publisher}.
  * The controller is able to send messages in the form of commands by notifying observers based on key events.
  */
-public class KeyBoardController extends KeyAdapter implements Observable {
+public class KeyBoardController extends KeyAdapter implements Publisher {
 
     private ArrayList<Observer> observers;
     private DomainServices services;

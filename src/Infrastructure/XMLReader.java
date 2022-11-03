@@ -32,9 +32,9 @@ public class XMLReader extends Reader {
      * Encapsulates the document object in a {@code DOMDeserializer} object which implements {@code Deserializer}, and returns it.
      * @param file a {@code java.io.File} object is provided.
      * @return {@code DOMDeserializer} object that encapsulates the parsed xml as a Document object model.
-     * @exception ParserConfigurationException thrown when document builder fails to parse xml file.
-     * @exception IOException thrown when any IO errors occur.
-     * @exception SAXException thrown when any parse errors occur.
+     *  ParserConfigurationException thrown when document builder fails to parse xml file.
+     *  IOException thrown when any IO errors occur.
+     *  SAXException thrown when any parse errors occur.
      */
     @Override
     public Deserializer readFile(File file) {

@@ -166,7 +166,7 @@ public class DomainRenderer implements DomainVisitor {
      * This strategy adheres to a lazy evaluation. Images are read at runtime instead of at compile-time.
      * This way the domain is not cluttered with objects like {@code java.awt.BufferedImage}.
      * @param imageItem An instance of {@code ImageItem}
-     * @exception IOException thrown when any IO errors occur.
+     *  IOException thrown when any IO errors occur.
      */
     @Override
     public void visitImageItem(ImageItem imageItem) {
