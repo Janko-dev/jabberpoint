@@ -69,9 +69,14 @@ public class StyleRenderer implements StyleVisitor{
     @Override
     public void visitBulletPointStyle(BulletPointStyle bulletPointStyle) {
         int fontHeight = renderer.getGraphics().getFontMetrics().getHeight();
-        renderer.getGraphics().drawString(bulletPointStyle.getBulletPoint(),
+        String bulletPoint = bulletPointStyle.getBulletPoint();
+        renderer.getGraphics().drawString(bulletPoint,
                 renderer.getxOffset() + renderer.getPosX(),
                 renderer.getyOffset() + renderer.getPosY() + fontHeight);
-        renderer.setPosX(renderer.getPosX() + renderer.getGraphics().getFont().getSize());
+
+        int bulletPointOffset = renderer.getGraphics()
+                .getFontMetrics()
+                .charsWidth(bulletPoint.toCharArray(), 0, bulletPoint.length());
+        renderer.setPosX(renderer.getPosX() + bulletPointOffset);
     }
 }

@@ -10,8 +10,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f59451d9-e260-431d-b3b9-923e3de50a1d" name="Changes" comment="Added draft class hierarchy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/KeyBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/slideshow_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/slideshow_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Creation/DOMDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Visitors/StyleRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/SlideShowProjector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

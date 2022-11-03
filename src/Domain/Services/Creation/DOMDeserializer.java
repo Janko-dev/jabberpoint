@@ -71,7 +71,7 @@ public class DOMDeserializer implements Deserializer {
         TOCSlide tocSlide = new TOCSlide();
         Map.Entry<Integer, String> foundEntry = subjectMap.ceilingEntry(nodeIndex);
         List tocList = new List();
-        TextItem header = new TextItem("Inhoudsopgave");
+        TextItem header = new TextItem("Table of Contents");
         header.addStyle(new FontStyle("Arial", 38));
         tocList.addComponent(header);
         for (Map.Entry<Integer, String> entry : subjectMap.entrySet()) {

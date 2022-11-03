@@ -81,7 +81,7 @@ public class SlideShowProjector extends Projector{
         SlideShowComponent current = services.getCurrentSlide();
 
         // visit and render slide items
-        DomainVisitor domainRenderer = new DomainRenderer(g, 0, TOP_OFFSET, frame.getBounds(), defaultFont);
+        DomainVisitor domainRenderer = new DomainRenderer(g, 10, TOP_OFFSET, frame.getBounds(), defaultFont);
         current.accept(domainRenderer);
 
         // reset font to default
